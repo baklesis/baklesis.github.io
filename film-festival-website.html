@@ -37,13 +37,21 @@
             color: white;
             text-align: center;
             padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
         }
 
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
-
         nav {
             background-color: var(--secondary-color);
             padding: 1rem;
@@ -164,7 +172,30 @@
     </style>
 </head>
 <body>
-    <header>
+        <header>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="logo">
+                <defs>
+                    <linearGradient id="filmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Stylized film reel background -->
+                <circle cx="50" cy="50" r="45" fill="url(#filmGradient)"/>
+                
+                <!-- Film strip elements -->
+                <rect x="25" y="30" width="50" height="40" fill="white" rx="5" opacity="0.8"/>
+                <circle cx="35" cy="40" r="3" fill="#e74c3c"/>
+                <circle cx="65" cy="40" r="3" fill="#e74c3c"/>
+                <circle cx="35" cy="60" r="3" fill="#e74c3c"/>
+                <circle cx="65" cy="60" r="3" fill="#e74c3c"/>
+                
+                <!-- Stylized camera icon overlay -->
+                <path d="M40 45 L60 35 L60 65 L40 55 Z" fill="#ffffff" opacity="0.9"/>
+            </svg>
+        </div>
         <div class="container">
             <h1>PT Shorts - Potidaneia Short Film Festival</h1>
             <p>Celebrating Independent Filmmaking</p>

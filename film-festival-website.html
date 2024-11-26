@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indie Horizon Short Film Festival</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f1c40f;
+        }
+
+        .film-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .film-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .film-card:hover {
+            transform: scale(1.05);
+        }
+
+        .submit-section {
+            background-color: #f9f9f9;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .submit-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Indie Horizon Short Film Festival</h1>
+            <p>Celebrating Independent Filmmaking</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#films">Films</a></li>
+            <li><a href="#submit">Submit</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h2>About the Festival</h2>
+            <p>Indie Horizon is a celebration of innovative and passionate independent filmmakers from around the world. We showcase groundbreaking short films that challenge perspectives and tell unique stories.</p>
+        </section>
+
+        <section id="films">
+            <h2>Featured Films</h2>
+            <div class="film-grid">
+                <div class="film-card">
+                    <h3>Echoes of Silence</h3>
+                    <p>A poignant drama exploring human connection</p>
+                </div>
+                <div class="film-card">
+                    <h3>Urban Rhythms</h3>
+                    <p>A vibrant documentary about city life</p>
+                </div>
+                <div class="film-card">
+                    <h3>Quantum Dreams</h3>
+                    <p>A mind-bending sci-fi short</p>
+                </div>
+                <div class="film-card">
+                    <h3>Whispers of Home</h3>
+                    <p>An intimate look at cultural identity</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="submit" class="submit-section">
+            <h2>Submit Your Film</h2>
+            <p>Are you a filmmaker with a compelling short? Submit your work for a chance to be featured!</p>
+            <button class="submit-button" onclick="openSubmissionForm()">Submit Now</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Indie Horizon Short Film Festival. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openSubmissionForm() {
+            alert('Submission form coming soon! Email submissions@indiehorizon.com');
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

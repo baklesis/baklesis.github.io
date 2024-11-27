@@ -26,7 +26,7 @@
         }
 
         ul {
-          padding-left: 10px;
+          padding-left: 30px;
         }
 
         .container {
@@ -58,32 +58,68 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
+        section {
+            scroll-margin-top: 20px; /* Adjust based on the navbar height */
+        }
+
 
         nav {
             background-color: var(--secondary-color);
-            padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            justify-content: center; /* Center-align the navbar content */
+            align-items: center;
+            padding: 0; /* Remove any padding */
         }
 
-        nav a {
+        .nav-links {
+            list-style: none;
+            display: flex; /* Horizontal alignment for links */
+            gap: 20px;
+            margin: 0; /* Remove default margins */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
+            padding: 10px 15px; /* Add some spacing for better clickability */
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: #f1c40f;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                background-color: var(--primary-color);
+                padding: 1rem;
+                border-radius: 8px;
+                position: absolute;
+                top: 60px; /* Adjust to appear below the sticky nav */
+                right: 20px;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
         }
 
         section {
@@ -195,16 +231,22 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#dates">Dates</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#benefits">Filmmaker Benefits</a></li>
-            <li><a href="#submission">Submission</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <button class="hamburger" aria-label="Toggle navigation">
+                &#9776; <!-- Unicode for hamburger menu icon -->
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#dates">Dates</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#benefits">Filmmaker Benefits</a></li>
+                <li><a href="#submission">Submission</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+    
 
     <main class="container">
         <section id="about">
@@ -325,6 +367,27 @@
                 button.textContent = bio.classList.contains('expanded') ? 'Read Less' : 'Read More';
             });
         });
-    </script>    
+    </script>
+    
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' // Ensures the heading aligns at the top
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>

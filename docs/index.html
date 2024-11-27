@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Shorts - Potidaneia Short Film Festival</title>
+    <title>pt shorts: Potidania Film Festival</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -42,7 +42,7 @@
             align-items: center;
         }
 
-        .logo img {
+        .logo {
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -54,6 +54,7 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
+
         nav {
             background-color: var(--secondary-color);
             padding: 1rem;
@@ -103,7 +104,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             padding: 20px;
-            text-align: center;
+            text-align: left;
             transition: transform 0.3s ease;
         }
 
@@ -119,23 +120,8 @@
             margin-bottom: 15px;
         }
 
-        .film-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .film-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .film-card:hover {
-            transform: scale(1.05);
+        .team-member h3 {
+            margin-bottom: 10px;
         }
 
         .submit-section {
@@ -174,165 +160,120 @@
     </style>
 </head>
 <body>
-        <header>
-        <div class="logo">
-            <img src="assets/logo_black.jpg" alt="PT-Shorts Logo" class="logo">
-        </div>
-        <div class="container">
-            <h1>PT Shorts - Potidaneia Short Film Festival</h1>
-            <p>Celebrating Independent Filmmaking</p>
-        </div>
+    <header>
+        <img src="assets/logo_black.jpg" alt="PT-Shorts Logo" class="logo">
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#festival-details">Festival</a></li>
-            <li><a href="#films">Films</a></li>
-            <li><a href="#organizing-committee">Committee</a></li>
-            <li><a href="#head-programmers">Programmers</a></li>
-            <li><a href="#jury">Jury</a></li>
-            <li><a href="#submit">Submit</a></li>
+            <li><a href="#dates">Dates</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#benefits">Filmmaker Benefits</a></li>
+            <li><a href="#submission">Submission</a></li>
+            <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <main class="container">
         <section id="about">
-            <h2>About the Festival</h2>
-            <p>PT Shorts is a celebration of innovative and passionate independent filmmakers from around the world. We showcase groundbreaking short films that challenge perspectives and tell unique stories.</p>
-        </section>
+            <h2>Festival Overview</h2>
+            <p><strong>pt shorts: Potidania Film Festival</strong> is an emerging short film festival set in the picturesque mountainous village of <a href="https://maps.app.goo.gl/YpsYKim94xvWTHUi9" target="_blank">Potidania, Greece</a>. Our aim is to revitalize this historic location, which serves as a beloved meeting point for around 100-200 visitors tied to the village by heritage, with a celebration of cinema that brings together emerging or established filmmakers and locals alike. This two-day festival, hosted in Potidania's scenic amphitheater, will feature film screenings, industry masterclasses, a press conference and an awards ceremony. 
+            </p>
+            <p>In our inaugural (1st) edition, <strong>pt shorts</strong> will host a lineup of short films curated to showcase the voice of independent cinema. The festival will be judged by three highly respected industry jurors (TBA), ensuring a prestigious selection of winners. 
+            </p>
+            </section>
 
-        <section id="festival-details">
-            <h2>Festival Details</h2>
-            <p>Pt shorts: Potidania Film Festival is an emerging short film festival set in the picturesque mountainous village of Potidania, Greece. Our aim is to revitalize this historic location, which serves as a beloved meeting point for around 100-200 visitors tied to the village by heritage, with a celebration of cinema that brings together emerging or established filmmakers and locals alike. This two-day festival, hosted in Potidania's scenic amphitheater, will feature film screenings, industry masterclasses, a press conference and an awards ceremony. 
-                In our inaugural (1st) edition, Pt shorts will host a lineup of short films curated to showcase the voice of independent cinema. The festival will be judged by three highly respected industry jurors (TBA), ensuring a prestigious selection of winners. 
-                </p>
-            
-            <h3>Key Information</h3>
+        <section id="dates">
+            <h2>Festival Dates</h2>
+            <p>The festival will take place on <strong>July 26-27, 2025</strong></p>
+            <h3>Schedule</h3>
             <ul>
-                <li>Date: July 19-20, 2025</li>
-                <li>Location: Potidaneia, Greece</li>
-                <li>Categories: Narrative, Documentary, Experimental, Animation</li>
-                <li>Awards: Best Film, Audience Choice, Best Director, Best Actor, Best Screenplay</li>
-            </ul>
-
-            <h3>Festival Highlights</h3>
-            <ul>
-                <li>Film Screenings</li>
-                <li>Q&A Sessions with Filmmakers</li>
-                <li>Workshops and Masterclasses</li>
-                <li>Networking Events</li>
-                <li>Awards Ceremony</li>
+                <li><strong>Saturday, July 26th</strong>: Screenings of the selected films and DJ set celebration</li>
+                <li><strong>Sunday, July 27th</strong>: Press conference, masterclasses, award ceremony, and closing party</li>
             </ul>
         </section>
 
-        <section id="films">
-            <h2>Featured Films</h2>
-            <div class="film-grid">
-                <div class="film-card">
-                    <h3>Echoes of Silence</h3>
-                    <p>A poignant drama exploring human connection</p>
-                </div>
-                <div class="film-card">
-                    <h3>Urban Rhythms</h3>
-                    <p>A vibrant documentary about city life</p>
-                </div>
-                <div class="film-card">
-                    <h3>Quantum Dreams</h3>
-                    <p>A mind-bending sci-fi short</p>
-                </div>
-                <div class="film-card">
-                    <h3>Whispers of Home</h3>
-                    <p>An intimate look at cultural identity</p>
-                </div>
+        <section id="awards">
+            <h2>Award Categories</h2>
+            <ul>
+                <li>Best Movie</li>
+                <li>Best Directing</li>
+                <li>Best Screenplay</li>
+                <li>Best Performance </li>
+                <li>Audience Award</li>
+            </ul>
+        </section>
+
+        <section id="benefits">
+            <h2>Benefits for Selected Filmmakers</h2>
+            <ul>
+                <li><strong>Transportation</strong>: Complimentary transportation from Nafpaktos to Potidania</li>
+                <li><strong>Hospitality</strong>: Free accommodation and meals for two people per movie over the two-day festival period. In general, the filmmakers coming to our village will have a personal and special treatment as it is one of our main goals to introduce Potidania to others.</li>
+                <li><strong>Promotional Opportunities</strong>: Press opportunities, including a press conference on the festival's second day, social media promotion and a special listing of pt shorts films on a dedicated Letterboxd list.</li>
+                <li><strong>Masterclasses</strong>: Access to three masterclasses conducted by the festival's pristine jury</li>
+            </ul>
+        </section>
+
+        <section id="submission">
+            <h2>Submission Guidelines</h2>
+            <ul>
+                <li><strong>Genres</strong>: We accept any fiction films, including experimental work; however, documentaries are not eligible for this edition (a documentary category is planned for future editions).</li>
+                <li><strong>Length</strong>: Films can not exceed 30 minutes of total run time.</li>
+                <li><strong>Submission</strong>: Submit your film as a YouTube or Vimeo link with English subtitles (Greek-speaking films only need English subtitles if selected).</li>
+                <li><strong>Selected Films</strong>: Selected films will need to provide a ProRes 422 or DCP file with burnt-in subtitles.</li>
+            </ul>
+            <div class="submit-section">
+                <p>Submission Deadline: May 4, 2025</p>
+                <p>Submission Fee: No fee required</p>
+                <button class="submit-button" onclick="window.location.href='mailto:ptshorts.filmfestival@gmail.com'">Submit Your Film</button>
             </div>
         </section>
 
-        <section id="organizing-committee">
-            <h2>Organizing Committee</h2>
+        <section id="team">
+            <h2>Festival Team</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Damianos Chrysochoides">
-                    <h3>Damianos Chrysochoides</h3>
-                    <p>Co-Founder and Festival Director</p>
-                    <p>Award-winning film producer with 15 years of experience in independent cinema.</p>
+                    <img src="assets/chrysochoidis_profile.jpg" alt="Damianos Chrysochoides">
+                    <h3>Damianos Chrysochoidis</h3>
+                    <p><em>Co-Founder & Festival Director</em></p>
+                    <p>Damianos began his studies at the Athens University of Economics and Business before pursuing his true passion for filmmaking at SAE Athens in 2020. During his studies, he produced the multi award-winning short On the Hill and directed the documentary KOUMI, which earned the Nikos Koundouros Award at the International Documentary Festival of Ierapetra. His thesis film KAPPA, starring Tasos Giannopoulos, is currently on the festival circuit, including selections at Chania Film Festival and Microμ Film Festival. Alongside his creative projects, Damianos freelances as a videographer and editor for ICARUS Sports and directs impactful video content for businesses, NGOs, and institutions. He is also a member of the founding team of the greek NGO Ecogenia which promotes sustainability through civic engagement, training and employment opportunities for young people.</p>
                 </div>
                 <div class="team-member">
                     <img src="assets/baklesis_profile.jpg" alt="Panagiotis Baklesis">
                     <h3>Panagiotis Baklesis</h3>
-                    <p>Co-Founder, Operations Director</p>
-                    <p>Software Engineer, </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="head-programmers">
-            <h2>Head Programmers</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="assets/avlamis_profile.png" alt="Konstantinos R. Avlamis">
-                    <h3>Konstantinos R. Avlamis</h3>
-                    <p>Film Programmer</p>
-                    <p>Renowned film curator with expertise in international independent cinema.</p>
+                    <p><em>Co-Founder & Operations Director</em></p>
+                    <p>Panagiotis is a software engineer, film buff and  </p>
                 </div>
                 <div class="team-member">
                     <img src="/api/placeholder/150/150" alt="Olga Tsatou">
                     <h3>Olga Tsatou</h3>
-                    <p>Documentary Programmer</p>
-                    <p>Award-winning documentary filmmaker and programmer.</p>
+                    <p><em>Head of Programming</em></p>
+                    <p>Brief resume</p>
                 </div>
                 <div class="team-member">
                     <img src="assets/stagakis_profile.png" alt="George Stagakis">
                     <h3>George Stagakis</h3>
-                    <p>Narrative Shorts Programmer</p>
-                    <p>Independent film critic and narrative shorts specialist.</p>
+                    <p><em>Head of Programming</em></p>
+                    <p>George completed his bachelor’s at SAE Athens (2020–2023). He has directed the short films On the Hill and Clementine, and edited the documentary Koumi. With 3 years of experience as a video editor for a prominent radio producer, he has also worked as a videographer and editor for two companies and a well-known Greek YouTuber. Additionally, he has directed and edited three music videos and co-directed a commercial for an NGO.</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/avlamis_profile.png" alt="Konstantinos R. Avlamis">
+                    <h3>Konstantinos R. Avlamis</h3>
+                    <p><em>Head of Programming</em></p>
+                    <p>Konstantinos is a seasoned video production professional and creative storyteller with a passion for visual arts and cinema. With a background in video editing, and visual effects, Konstantinos has collaborated with diverse teams to bring compelling narratives to life. Holding a BA in Digital Film Production from SAE Institute Athens, he combines technical expertise with a deep appreciation for the art of filmmaking. With a robust portfolio, Konstantinos has worked on a variety of projects, in the post production process, including feature films, TV series, documentaries, social media campaigns, short films, and promotional content. His collaborations with production teams and creative agencies have enabled him to craft compelling narratives and impactful visuals that resonate with audiences.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="jury">
-            <h2>Festival Jury</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="David Fincher">
-                    <h3>TBA</h3>
-                    <p>Jury President</p>
-                    <p>Acclaimed film director known for innovative storytelling.</p>
-                </div>
-                <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Ava DuVernay">
-                    <h3>TBA</h3>
-                    <p>Jury Member</p>
-                    <p>Groundbreaking film producer and social justice advocate.</p>
-                </div>
-                <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Wong Kar-wai">
-                    <h3>TBA</h3>
-                    <p>Jury Member</p>
-                    <p>Internationally renowned actor of artistic cinema.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="submit" class="submit-section">
-            <h2>Submit Your Film</h2>
-            <p>Are you a filmmaker with a compelling short? Submit your work for a chance to be featured!</p>
-            <button class="submit-button" onclick="openSubmissionForm()">Submit Now</button>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 PT Shorts - Potidaneia Short Film Festival. All rights reserved.</p>
-        <p>Contact: ptshorts.filmfestival@gmail.com | +30 6986672665 </p>
+        <p>&copy; 2024 pt shorts: Potidania Film Festival</p>
+        <p>Contact: ptshorts.filmfestival@gmail.com | +30 6986672665</p>
     </footer>
 
     <script>
-        function openSubmissionForm() {
-            alert('Submission portal opens July 1st, 2024.');
-            // todo update w/link to Film Freeway link
-        }
-
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

@@ -25,6 +25,10 @@
             color: var(--text-color);
         }
 
+        ul {
+          padding-left: 10px;
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -134,7 +138,7 @@
             background-color: var(--secondary-color);
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -143,6 +147,32 @@
         .submit-button:hover {
             background-color: #2980b9;
         }
+
+        .bio {
+            max-height: 100px; /* Adjust based on the desired initial visible height */
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .bio.expanded {
+            max-height: none; /* Allow full content visibility */
+        }
+
+        .toggle-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #2980b9;
+        }
+
 
         footer {
             background-color: var(--primary-color);
@@ -187,22 +217,21 @@
 
         <section id="dates">
             <h2>Festival Dates</h2>
-            <p>The festival will take place on <strong>July 26-27, 2025</strong></p>
-            <h3>Schedule</h3>
-            <ul>
-                <li><strong>Saturday, July 26th</strong>: Screenings of the selected films and DJ set celebration</li>
-                <li><strong>Sunday, July 27th</strong>: Press conference, masterclasses, award ceremony, and closing party</li>
-            </ul>
+            <p>The festival will take place on <strong>July 26-27, 2025</strong>. <br>
+                <strong>Saturday, July 26th</strong>: Screenings of the selected films and DJ set celebration. <br>
+                <strong>Sunday, July 27th</strong>: Press conference, masterclasses, award ceremony, and closing party.
+            </p>
         </section>
 
         <section id="awards">
             <h2>Award Categories</h2>
+            <p> There will be 5 categories and the </p>
             <ul>
-                <li>Best Movie</li>
-                <li>Best Directing</li>
-                <li>Best Screenplay</li>
-                <li>Best Performance </li>
-                <li>Audience Award</li>
+                <li><strong>Best Movie</strong></li>
+                <li><strong>Best Directing</strong></li>
+                <li><strong>Best Screenplay</strong></li>
+                <li><strong>Best Performance</strong></li>
+                <li><strong>Audience Award</strong></li>
             </ul>
         </section>
 
@@ -223,11 +252,11 @@
                 <li><strong>Length</strong>: Films can not exceed 30 minutes of total run time.</li>
                 <li><strong>Submission</strong>: Submit your film as a YouTube or Vimeo link with English subtitles (Greek-speaking films only need English subtitles if selected).</li>
                 <li><strong>Selected Films</strong>: Selected films will need to provide a ProRes 422 or DCP file with burnt-in subtitles.</li>
+                <li><strong>Submission Deadline</strong>: May 4, 2025</li>
+                <li><strong>Submission Fee</strong>: No fee required</li>  
             </ul>
-            <div class="submit-section">
-                <p>Submission Deadline: May 4, 2025</p>
-                <p>Submission Fee: No fee required</p>
-                <button class="submit-button" onclick="window.location.href='mailto:ptshorts.filmfestival@gmail.com'">Submit Your Film</button>
+            <div class="mt-4">
+                <button class="submit-button"><strong>Submit Your Film</strong></button>
             </div>
         </section>
 
@@ -237,32 +266,47 @@
                 <div class="team-member">
                     <img src="assets/chrysochoidis_profile.jpg" alt="Damianos Chrysochoides">
                     <h3>Damianos Chrysochoidis</h3>
-                    <p><em>Co-Founder & Festival Director</em></p>
-                    <p>Damianos began his studies at the Athens University of Economics and Business before pursuing his true passion for filmmaking at SAE Athens in 2020. During his studies, he produced the multi award-winning short On the Hill and directed the documentary KOUMI, which earned the Nikos Koundouros Award at the International Documentary Festival of Ierapetra. His thesis film KAPPA, starring Tasos Giannopoulos, is currently on the festival circuit, including selections at Chania Film Festival and Microμ Film Festival. Alongside his creative projects, Damianos freelances as a videographer and editor for ICARUS Sports and directs impactful video content for businesses, NGOs, and institutions. He is also a member of the founding team of the greek NGO Ecogenia which promotes sustainability through civic engagement, training and employment opportunities for young people.</p>
+                    <p><em>Co-Founder | Festival Director</em></p>
+                    <div class="bio">
+                        <p>Damianos began his studies at the Athens University of Economics and Business before pursuing his true passion for filmmaking at SAE Athens in 2020. During his studies, he produced the multi award-winning short On the Hill and directed the documentary KOUMI, which earned the Nikos Koundouros Award at the International Documentary Festival of Ierapetra. His thesis film KAPPA, starring Tasos Giannopoulos, is currently on the festival circuit, including selections at Chania Film Festival and Microμ Film Festival. Alongside his creative projects, Damianos freelances as a videographer and editor for ICARUS Sports and directs impactful video content for businesses, NGOs, and institutions. He is also a member of the founding team of the greek NGO Ecogenia which promotes sustainability through civic engagement, training and employment opportunities for young people.</p>
+                    </div>
+                    <button class="toggle-btn">Read More</button>
                 </div>
                 <div class="team-member">
                     <img src="assets/baklesis_profile.jpg" alt="Panagiotis Baklesis">
                     <h3>Panagiotis Baklesis</h3>
-                    <p><em>Co-Founder & Operations Director</em></p>
-                    <p>Panagiotis is a software engineer, film buff and  </p>
+                    <p><em>Co-Founder | Operations Director</em></p>
+                    <div class="bio">
+                        <p>Panagiotis is a software engineer, film buff and  </p>
+                    </div>
+                    <button class="toggle-btn">Read More</button>
                 </div>
                 <div class="team-member">
                     <img src="/api/placeholder/150/150" alt="Olga Tsatou">
                     <h3>Olga Tsatou</h3>
                     <p><em>Head of Programming</em></p>
-                    <p>Brief resume</p>
+                    <div class="bio">
+                        <p>Brief resume</p>
+                    </div>
+                    <button class="toggle-btn">Read More</button>
                 </div>
                 <div class="team-member">
                     <img src="assets/stagakis_profile.png" alt="George Stagakis">
                     <h3>George Stagakis</h3>
                     <p><em>Head of Programming</em></p>
-                    <p>George completed his bachelor’s at SAE Athens (2020–2023). He has directed the short films On the Hill and Clementine, and edited the documentary Koumi. With 3 years of experience as a video editor for a prominent radio producer, he has also worked as a videographer and editor for two companies and a well-known Greek YouTuber. Additionally, he has directed and edited three music videos and co-directed a commercial for an NGO.</p>
+                    <div class="bio">
+                        <p>George completed his bachelor’s at SAE Athens (2020–2023). He has directed the short films On the Hill and Clementine, and edited the documentary Koumi. With 3 years of experience as a video editor for a prominent radio producer, he has also worked as a videographer and editor for two companies and a well-known Greek YouTuber. Additionally, he has directed and edited three music videos and co-directed a commercial for an NGO.</p>
+                    </div>
+                    <button class="toggle-btn">Read More</button>
                 </div>
                 <div class="team-member">
                     <img src="assets/avlamis_profile.png" alt="Konstantinos R. Avlamis">
                     <h3>Konstantinos R. Avlamis</h3>
                     <p><em>Head of Programming</em></p>
-                    <p>Konstantinos is a seasoned video production professional and creative storyteller with a passion for visual arts and cinema. With a background in video editing, and visual effects, Konstantinos has collaborated with diverse teams to bring compelling narratives to life. Holding a BA in Digital Film Production from SAE Institute Athens, he combines technical expertise with a deep appreciation for the art of filmmaking. With a robust portfolio, Konstantinos has worked on a variety of projects, in the post production process, including feature films, TV series, documentaries, social media campaigns, short films, and promotional content. His collaborations with production teams and creative agencies have enabled him to craft compelling narratives and impactful visuals that resonate with audiences.</p>
+                    <div class="bio">
+                        <p>Konstantinos is a seasoned video production professional and creative storyteller with a passion for visual arts and cinema. With a background in video editing, and visual effects, Konstantinos has collaborated with diverse teams to bring compelling narratives to life. Holding a BA in Digital Film Production from SAE Institute Athens, he combines technical expertise with a deep appreciation for the art of filmmaking. With a robust portfolio, Konstantinos has worked on a variety of projects, in the post production process, including feature films, TV series, documentaries, social media campaigns, short films, and promotional content. His collaborations with production teams and creative agencies have enabled him to craft compelling narratives and impactful visuals that resonate with audiences.</p>
+                    </div>
+                    <button class="toggle-btn">Read More</button>
                 </div>
             </div>
         </section>
@@ -274,15 +318,13 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const bio = button.previousElementSibling;
+                bio.classList.toggle('expanded');
+                button.textContent = bio.classList.contains('expanded') ? 'Read Less' : 'Read More';
             });
         });
-    </script>
+    </script>    
 </body>
 </html>

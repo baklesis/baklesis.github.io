@@ -95,6 +95,7 @@
         }
 
         @media screen and (max-width: 600px) {
+            .topnav.responsive {position: relative;}
             .topnav a:not(:first-child) {display: none;}
             .topnav a.icon {
                 float: center;
@@ -373,7 +374,32 @@
             const nav = document.getElementById("myTopnav");
             nav.classList.toggle("responsive");
         }
+    
+        // Highlighting sections on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.topnav a');
+    
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const top = rect.top - window.innerHeight * 0.2; // Adjust for a better trigger point
+                const bottom = rect.bottom;
+    
+                if (top <= 0 && bottom > 0) {
+                    currentSectionId = section.id;
+                }
+            });
+    
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
+    
     
     
     <script>

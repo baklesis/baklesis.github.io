@@ -8,7 +8,7 @@
         :root {
             --primary-color: #000000;
             --secondary-color: #000000;
-            --background-color: #ad43fe;
+            --background-color: #ffffff;
             --text-color: #000000;
         }
 
@@ -86,7 +86,7 @@
         }
 
         .topnav a.active {
-            background-color: #ad43fe;
+            background-color: #b670f9;
             color: white;
         }
 
@@ -138,15 +138,15 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
         }
 
         .team-member {
-            background-color: #934bca;
-            border-radius: 8px;
+            background-color: #b670f9;
+            border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
+            padding: 10px;
             text-align: left;
             transition: transform 0.3s ease;
         }
@@ -156,8 +156,8 @@
         }
 
         .team-member img {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
@@ -189,6 +189,7 @@
 
         .bio {
             max-height: 100px; /* Adjust based on the desired initial visible height */
+            max-width: 150px;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
@@ -239,6 +240,7 @@
         <a href="#awards" class="nav-link">Awards</a>
         <a href="#benefits" class="nav-link">Filmmaker Benefits</a>
         <a href="#submission" class="nav-link">Submission</a>
+        <a href="#potidania" class="nav-link">Potidania</a>
         <a href="#team" class="nav-link">Team</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
@@ -251,7 +253,7 @@
     <main class="container">
         <section id="about">
             <h2>Festival Overview</h2>
-            <p><strong>pt shorts: Potidania Film Festival</strong> is an emerging short film festival set in the picturesque mountainous village of <a href="https://maps.app.goo.gl/YpsYKim94xvWTHUi9" target="_blank">Potidania, Greece</a>. Our aim is to revitalize this historic location, which serves as a beloved meeting point for around 100-200 visitors tied to the village by heritage, with a celebration of cinema that brings together emerging or established filmmakers and locals alike. This two-day festival, hosted in Potidania's scenic amphitheater, will feature film screenings, industry masterclasses, a press conference and an awards ceremony. 
+            <p><strong>pt shorts: Potidania Film Festival</strong> is an emerging short film festival set in the picturesque mountainous village of <a href="#potidania" class="nav-link">Potidania, Greece</a>. Our aim is to revitalize this historic location, which serves as a beloved meeting point for around 100-200 visitors tied to the village by heritage, with a celebration of cinema that brings together emerging or established filmmakers and locals alike. This two-day festival, hosted in Potidania's scenic amphitheater, will feature film screenings, industry masterclasses, a press conference and an awards ceremony. 
             </p>
             <p>In our inaugural (1st) edition, <strong>pt shorts</strong> will host a lineup of short films curated to showcase the voice of independent cinema. The festival will be judged by three highly respected industry jurors (TBA), ensuring a prestigious selection of winners. 
             </p>
@@ -295,20 +297,36 @@
                 <li><strong>Submission</strong>: Submit your film as a YouTube or Vimeo link with English subtitles (Greek-speaking films only need English subtitles if selected).</li>
                 <li><strong>Selected Films</strong>: Selected films will need to provide a ProRes 422 or DCP file with burnt-in subtitles.</li>
                 <li><strong>Submission Deadline</strong>: May 4, 2025</li>
-                <li><strong>Submission Fee</strong>: No fee required</li>  
+                <li><strong>Submission Fee</strong>: No fee required </li>  
             </ul>
             <div class="mt-4">
-                <button class="submit-button"><strong>Submit Your Film</strong></button>
+                <br>
+                <a href="mailto:ptshorts.filmfestival@gmail.com" class="submit-button">Submit your film</a>
             </div>
         </section>
+        <section id="potidania">
+            <h2>Potidania</h2>
+            <p>Potidania, a small mountain village amphitheatrically built on the slopes of Mount Trikorfo, gazes upon the high mountain ranges of Giona and Vardousia and, lower down, the artificial lake and river of Mornos.
 
+                It’s worth leaving behind the beautiful and picturesque Doric seaside for a while and, with just a 20-minute drive, finding yourself in the majestic nature where greenery dominates everywhere in and around the village, embraced by the vast fir forest.
+                
+                Stone fountains with cool, running water to quench your thirst, wooden benches at stone vantage points to explore, countless hillsides and ravines to bring peace to your mind.
+                
+                Scattered white chapels on the mountain revive traditional festivals throughout the year, while local taverns offer traditional flavors. Marked trails guide you through the lush forest to the peak of Mount Trikorfo (1,549 meters), where you can admire the entire Corinthian Gulf, stretching from Patras to Corinth.
+                
+                Potidania aims to give you a small taste of its charms and invites you to visit and experience them up close.
+                <br>
+                Here's a bird's-eye view of the village.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ihblTQPa9hk?si=lvgZH3410g4pXLh3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
         <section id="team">
             <h2>Festival Team</h2>
             <div class="team-grid">
                 <div class="team-member">
                     <img src="assets/chrysochoidis_profile.jpg" alt="Damianos Chrysochoides">
-                    <h3>Damianos Chrysochoidis</h3>
-                    <p><em>Co-Founder | Festival Director</em></p>
+                    <h3>Damianos </h3>
+                    <p><em>Festival Director</em></p>
                     <div class="bio">
                         <p>Damianos began his studies at the Athens University of Economics and Business before pursuing his true passion for filmmaking at SAE Athens in 2020. During his studies, he produced the multi award-winning short On the Hill and directed the documentary KOUMI, which earned the Nikos Koundouros Award at the International Documentary Festival of Ierapetra. His thesis film KAPPA, starring Tasos Giannopoulos, is currently on the festival circuit, including selections at Chania Film Festival and Microμ Film Festival. Alongside his creative projects, Damianos freelances as a videographer and editor for ICARUS Sports and directs impactful video content for businesses, NGOs, and institutions. He is also a member of the founding team of the greek NGO Ecogenia which promotes sustainability through civic engagement, training and employment opportunities for young people.</p>
                     </div>
@@ -317,18 +335,19 @@
                 <div class="team-member">
                     <img src="assets/baklesis_profile.jpg" alt="Panagiotis Baklesis">
                     <h3>Panagiotis Baklesis</h3>
-                    <p><em>Co-Founder | Operations Director</em></p>
+                    <p><em>Operations Director</em></p>
                     <div class="bio">
                         <p>Panagiotis is a software engineer, film buff and  </p>
                     </div>
                     <button class="toggle-btn">Read More</button>
                 </div>
                 <div class="team-member">
-                    <img src="/api/placeholder/150/150" alt="Olga Tsatou">
+                    <img src="assets/tsatou_profile.jpeg" alt="Olga Tsatou">
                     <h3>Olga Tsatou</h3>
                     <p><em>Head of Programming</em></p>
                     <div class="bio">
-                        <p>Brief resume</p>
+                        <p>Olga graduated in 2023 from the Film Department of SAE Creative Media College. Her love for cinema and the festival experience led her to volunteer in the process of film selection and the execution of notable film festivals, such as the Athens International Film Festival (Nyxtes Premieras) and the Athens Marathon Film Festival. The student documentary The Legend of Kavalawood, which she edited and produced, competed in the National Student Section of the Drama Short Film Festival and received positive reviews from Athinorama, Luben, and LIFO. She currently works as a production manager on short and feature films.
+                        </p>
                     </div>
                     <button class="toggle-btn">Read More</button>
                 </div>
@@ -343,7 +362,7 @@
                 </div>
                 <div class="team-member">
                     <img src="assets/avlamis_profile.png" alt="Konstantinos R. Avlamis">
-                    <h3>Konstantinos R. Avlamis</h3>
+                    <h3>K. R. Avlamis</h3>
                     <p><em>Head of Programming</em></p>
                     <div class="bio">
                         <p>Konstantinos is a seasoned video production professional and creative storyteller with a passion for visual arts and cinema. With a background in video editing, and visual effects, Konstantinos has collaborated with diverse teams to bring compelling narratives to life. Holding a BA in Digital Film Production from SAE Institute Athens, he combines technical expertise with a deep appreciation for the art of filmmaking. With a robust portfolio, Konstantinos has worked on a variety of projects, in the post production process, including feature films, TV series, documentaries, social media campaigns, short films, and promotional content. His collaborations with production teams and creative agencies have enabled him to craft compelling narratives and impactful visuals that resonate with audiences.</p>

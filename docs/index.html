@@ -24,6 +24,25 @@
             background-color: var(--background-color);
             color: var(--text-color);
         }
+        
+        .center-align {
+            text-align: center
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto; /* Adjust margin as needed */
+            max-width: 800px; /* Optional: Limit the video width */
+            }
+
+        .video-container iframe {
+            width: 100%; /* Responsive width */
+            max-width: 560px; /* Standard YouTube width */
+            aspect-ratio: 16 / 9; /* Maintain 16:9 ratio */
+            border: 0; /* Remove default iframe border */
+            }
 
         ul {
           padding-left: 30px;
@@ -231,7 +250,7 @@
 </head>
 <body>
     <header>
-        <img src="assets/logo_white.jpg" alt="PT-Shorts Logo" class="logo">
+        <img src="assets/logo-negative.jpg" alt="PT-Shorts Logo" class="logo">
     </header>
 
     <nav class="topnav" id="myTopnav">
@@ -253,9 +272,10 @@
     <main class="container">
         <section id="about">
             <h2>Festival Overview</h2>
-            <p><strong>pt shorts: Potidania Film Festival</strong> is an emerging short film festival set in the picturesque mountainous village of <a href="#potidania" class="nav-link">Potidania, Greece</a>. Our aim is to revitalize this historic location, which serves as a beloved meeting point for around 100-200 visitors tied to the village by heritage, with a celebration of cinema that brings together emerging or established filmmakers and locals alike. This two-day festival, hosted in Potidania's scenic amphitheater, will feature film screenings, industry masterclasses, a press conference and an awards ceremony. 
+            <p><strong>pt shorts: Potidania Film Festival</strong> is an emerging short film festival set in the picturesque mountainous village of Potidania, Greece. Our aim is to revitalize this historic location, which serves as a beloved meeting point for around 100-200 visitors tied to the village by heritage, with a celebration of cinema that brings together emerging or established filmmakers and locals alike. This two-day festival, hosted in Potidania's scenic amphitheater, will feature film screenings, industry masterclasses, a press conference and an awards ceremony. 
             </p>
-            <p>In our inaugural (1st) edition, <strong>pt shorts</strong> will host a lineup of short films curated to showcase the voice of independent cinema. The festival will be judged by three highly respected industry jurors (TBA), ensuring a prestigious selection of winners. 
+
+            <p><br>In our inaugural (1st) edition, <strong>pt shorts</strong> will host a lineup of short films curated to showcase the voice of independent cinema. The festival will be judged by three highly respected industry jurors (TBA), ensuring a prestigious selection of winners. 
             </p>
             </section>
 
@@ -315,10 +335,20 @@
                 Scattered white chapels on the mountain revive traditional festivals throughout the year, while local taverns offer traditional flavors. Marked trails guide you through the lush forest to the peak of Mount Trikorfo (1,549 meters), where you can admire the entire Corinthian Gulf, stretching from Patras to Corinth.
                 
                 Potidania aims to give you a small taste of its charms and invites you to visit and experience them up close.
-                <br>
-                Here's a bird's-eye view of the village.
+                <br>You can find more information about Potidania on the village's <a href="https://potidaneia.gr/">website</a>:
+
             </p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ihblTQPa9hk?si=lvgZH3410g4pXLh3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- <p class="center-align">Here's a bird's-eye view of the village.</p>
+            <div class="video-container">
+                <iframe 
+                  src="https://www.youtube.com/embed/ihblTQPa9hk?si=lvgZH3410g4pXLh3" 
+                  title="YouTube video player" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+            </div> -->
+
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ihblTQPa9hk?si=lvgZH3410g4pXLh3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
         </section>
         <section id="team">
             <h2>Festival Team</h2>

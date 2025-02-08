@@ -159,7 +159,7 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
             gap: 10px;
         }
 
@@ -177,11 +177,11 @@
         }
 
         .team-member img {
+            display: block
+            margin: auto
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
         }
 
         .team-member h3 {
@@ -209,8 +209,8 @@
         }
 
         .bio {
-            max-height: 100px; /* Adjust based on the desired initial visible height */
-            max-width: 150px;
+            max-height: 150px; /* Adjust based on the desired initial visible height */
+            max-width: 300px;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }

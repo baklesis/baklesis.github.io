@@ -159,9 +159,18 @@
 
         .team-grid {
             display: grid;
+            grid-template-columns: repeat(3, minmax(280px, 1fr));
+            gap: 10px;
+        }
+
+        @media screen and (min-width: 600px) {
+            .team-grid {
+            display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 10px;
         }
+        }
+
 
         .team-member {
             background-color: #b670f9;

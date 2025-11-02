@@ -1,606 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://pt-shorts.gr/docs/assets/logo-negative.svg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="https://pt-shorts.gr/docs/assets/logo-negative.svg" />
     <title>pt-shorts: Potidania Film Festival</title>
-    <link rel="icon" type="image/x-icon" href="/docs/assets/logo-negative.svg">
+    <link rel="icon" type="image/x-icon" href="/docs/assets/logo-negative.svg" />
     <style>
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #000000;
-            --background-color: #ffffff;
-            --text-color: #000000;
+      :root {
+        --primary-color: #000000;
+        --secondary-color: #000000;
+        --background-color: #ffffff;
+        --text-color: #000000;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+
+      .center-align {
+        text-align: center;
+      }
+
+      .video-container iframe {
+        width: 100%;
+        /* Standard YouTube width */
+        aspect-ratio: 16 / 9;
+        /* Maintain 16:9 ratio */
+        border: 0;
+        /* Remove default iframe border */
+      }
+
+      ul {
+        padding-left: 30px;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo {
+        width: 300px;
+        height: 300px;
+        border-radius: 40%;
+        object-fit: cover;
+        margin-bottom: 1px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      section {
+        scroll-margin-top: 20px;
+        /* Adjust based on the navbar height */
+      }
+
+      .topnav {
+        overflow: hidden;
+        position: sticky;
+        background-color: var(--secondary-color);
+        top: 0;
+        z-index: 100;
+      }
+
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover {
+        background-color: #b670f9;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #b670f9;
+        color: black;
+      }
+
+      .topnav .icon {
+        display: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        .topnav.responsive {
+          position: relative;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .topnav a:not(:first-child) {
+          display: none;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: var(--background-color);
-            color: var(--text-color);
+        .topnav a.icon {
+          float: center;
+          display: block;
         }
-        
-        .center-align {
-            text-align: center
-        }
+      }
 
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px auto; /* Adjust margin as needed */
-            max-width: 800px; /* Optional: Limit the video width */
-            }
-
-        .video-container iframe {
-            width: 100%; /* Responsive width */
-            max-width: 560px; /* Standard YouTube width */
-            aspect-ratio: 16 / 9; /* Maintain 16:9 ratio */
-            border: 0; /* Remove default iframe border */
-            }
-
-        ul {
-          padding-left: 30px;
+      @media screen and (max-width: 600px) {
+        .topnav.responsive {
+          position: relative;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: center;
         }
+      }
 
-        .logo {
-            width: 300px;
-            height: 300px;
-            border-radius: 40%;
-            object-fit: cover;
-            margin-bottom: 1px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        section {
-            scroll-margin-top: 20px; /* Adjust based on the navbar height */
+      @media screen and (min-width: 600px) {
+        .topnav.responsive {
+          position: relative;
         }
 
         .topnav {
-            overflow: hidden;
-            position: sticky;
-            background-color: var(--secondary-color);
-            top: 0;
-            z-index: 100;
+          display: flex;
+          justify-content: center;
         }
+      }
 
-        .topnav a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
+      section {
+        margin-bottom: 40px;
+      }
 
-        .topnav a:hover {
-            background-color: #b670f9;
-            color: black;
-        }
+      section h2 {
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+      }
 
-        .topnav a.active {
-            background-color: #b670f9;
-            color: black;
-        }
+      /* Styling for new images in sections */
+      section img.section-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 15px auto;
+        display: block;
+      }
 
-        .topnav .icon {
-            display: none;
-        }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(280px, 1fr));
+        gap: 10px;
+      }
 
-        @media screen and (max-width: 600px) {
-            .topnav.responsive {position: relative;}
-            .topnav a:not(:first-child) {display: none;}
-            .topnav a.icon {
-                float: center;
-                display: block;
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            .topnav.responsive {position: relative;}
-            .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-        }
-        
-        .topnav.responsive a {
-            float: none;
-            display: block;
-            text-align: center;
-        }
-        }
-
-        @media screen and (min-width: 600px) {
-            .topnav.responsive {position: relative;}
-            .topnav {
-                display: flex;
-                justify-content: center;
-        }
-        }
-        section {
-            margin-bottom: 40px;
-        }
-
-        section h2 {
-            border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
+      @media screen and (max-width: 800px) {
         .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(280px, 1fr));
-            gap: 10px;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 10px;
         }
+      }
 
-        @media screen and (max-width: 800px) {
-            .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 10px;
-        }
-        }
+      .team-member {
+        background-color: #b670f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        text-align: justify;
+        transition: transform 0.3s ease;
+        display: flex;
+        /* Use flexbox for layout */
+        flex-direction: column;
+        /* Stack children vertically */
+      }
 
+      .team-member:hover {
+        transform: scale(1.05);
+      }
 
-        .team-member {
-            background-color: #b670f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 10px;
-            text-align: justify;
-            transition: transform 0.3s ease;
-        }
+      .team-member img {
+        display: block;
+        margin: auto;
+        width: 150px;
+        height: 150px;
+        border-radius: 70%;
+        object-fit: cover;
+        /* Ensures images cover the area */
+      }
 
-        .team-member:hover {
-            transform: scale(1.05);
-        }
+      .team-member h3 {
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
 
-        .team-member img {
-            display: block;
-            margin: auto;
-            width: 150px;
-            height: 150px;
-            border-radius: 70%;
-        }
+      .team-member h4 {
+        text-align: left;
+        margin-bottom: 5px;
+      }
 
-        .team-member h3 {
-            text-align: left;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-        .team-member h4 {
-            text-align: left;
-            margin-bottom: 5px;
-        }
+      .submit-section {
+        background-color: #f9f9f9;
+        padding: 40px 0;
+        text-align: center;
+      }
 
-        .submit-section {
-            background-color: #f9f9f9;
-            padding: 40px 0;
-            text-align: center;
-        }
+      .submit-button {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-        .submit-button {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+      .submit-button:hover {
+        background-color: #2980b9;
+      }
 
-        .submit-button:hover {
-            background-color: #2980b9;
-        }
+      .bio {
+        max-height: 150px;
+        /* Adjust based on the desired initial visible height */
+        max-width: 300px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        flex-grow: 1;
+        /* Allows bio to take available space */
+      }
 
-        .bio {
-            max-height: 150px; /* Adjust based on the desired initial visible height */
-            max-width: 300px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+      .bio.expanded {
+        max-height: none;
+        /* Allow full content visibility */
+      }
 
-        .bio.expanded {
-            max-height: none; /* Allow full content visibility */
-        }
+      .toggle-btn {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        align-self: flex-start;
+        /* Aligns button to the start of the flex item */
+      }
 
-        .toggle-btn {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+      .toggle-btn:hover {
+        background-color: #2980b9;
+      }
 
-        .toggle-btn:hover {
-            background-color: #2980b9;
-        }
+      /* New styles for awards section */
+      .award-item {
+        margin-bottom: 25px;
+      }
 
+      .award-item h3 {
+        font-size: 1.25rem;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
 
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
+      .award-item p {
+        margin-left: 10px;
+        font-style: italic;
+      }
 
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
+      /* New styles for masterclasses */
+      .masterclass-item {
+        margin-bottom: 30px;
+      }
+
+      .masterclass-item h3 {
+        font-size: 1.25rem;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+      .masterclass-item img {
+        max-width: 600px;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          align-items: center;
         }
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <img src="assets/logo-negative.svg" alt="PT-Shorts Logo" class="logo">
+      <img src="assets/logo-negative.svg" alt="PT-Shorts Logo" class="logo" />
     </header>
 
+    <!-- Navigation bar updated to remove links to deleted sections -->
     <nav class="topnav" id="myTopnav">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#dates" class="nav-link">Dates</a>
-        <a href="#awards" class="nav-link">Awards</a>
-        <a href="#benefits" class="nav-link">Filmmaker Benefits</a>
-        <a href="#masterclasses" class="nav-link">Masterclasses</a>
-        <a href="#submission" class="nav-link">Submission</a>
-        <a href="#potidania" class="nav-link">Potidania</a>
-        <a href="#jury" class="nav-link">Jury</a>
-        <a href="#team" class="nav-link">Team</a>
-        <a href="#sponsors" class="nav-link">Sponsors</a>
-        <a href="https://www.instagram.com/ptshorts_filmfestival/" target="_blank"><img src="assets/logos/Instagram_Glyph_White.svg" width="25" height="25"></a>
-        <a href="https://www.facebook.com/profile.php?id=61572843686159" target="_blank"><img src="assets/logos/Facebook_Logo_Secondary.png" width="25" height="25"></a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-            &#9776; <!-- Hamburger icon -->
-        </a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#awards" class="nav-link">Awards</a>
+      <a href="#jury" class="nav-link">Jury</a>
+      <a href="#masterclasses" class="nav-link">Masterclasses</a>
+      <a href="#potidania" class="nav-link">Potidania</a>
+      <a href="#team" class="nav-link">Team</a>
+      <a href="#sponsors" class="nav-link">Sponsors</a>
+      <a href="https://www.instagram.com/ptshorts_filmfestival/" target="_blank"
+        ><img src="assets/logos/Instagram_Glyph_White.svg" width="25" height="25" alt="Instagram"
+      /></a>
+      <a href="https://www.facebook.com/profile.php?id=61572843686159" target="_blank"
+        ><img src="assets/logos/Facebook_Logo_Secondary.png" width="25" height="25" alt="Facebook"
+      /></a>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        &#9776;
+        <!-- Hamburger icon -->
+      </a>
     </nav>
-    
-    
 
     <main class="container">
-        <section id="about">
-            <h2>Festival Overview</h2>
-            <p><strong>pt-shorts: Potidania Film Festival</strong> is an emerging short film festival set in the picturesque mountainous village of Potidania, Greece. Our aim is to revitalize this historic location, which serves as a beloved meeting point for around 100-200 visitors tied to the village by heritage, with a celebration of cinema that brings together emerging or established filmmakers and locals alike. This two-day festival, hosted in Potidania's scenic amphitheater, will feature film screenings, industry masterclasses, a press conference and an awards ceremony. 
-            </p>
+      <!-- ABOUT section updated -->
+      <section id="about">
+        <h2>Festival Overview</h2>
+        <p>
+          <strong>pt-shorts: Potidania Film Festival</strong> is an emerging short film festival set
+          in the picturesque mountainous village of Potidania, Greece. With great success, the 1st
+          pt-shorts: Potidania Film Festival concluded on July 26–27, 2025, in the mountainous
+          village of Potidania, in the Dorida region. The festival attracted more than 500 attendees
+          to Saturday’s screenings, while approximately 200 visitors stayed at least for one night
+          for the first time in Potidania, Palaioxari, and Teichio—highlighting cultural tourism and
+          the short film industry with pt-shorts as a key pillar.
+        </p>
+        <p>
+          <br />A total of 40 volunteers—half of whom have no ties to the village—played a decisive
+          role in delivering the event, which drew strong participation from filmmakers. A highlight
+          was the presence of two international directors from France and Portugal, who visited
+          Greece for the first time and presented their films to the Potidania audience. The program
+          included screenings of 16 short films (11 international and 5 national), jury-led
+          masterclasses, a press conference, and an awards ceremony.
+        </p>
 
-            <p><br>In our inaugural (1st) edition, <strong>pt-shorts</strong> will host a lineup of short films curated to showcase the voice of independent cinema. The festival will be judged by three highly respected industry jurors: Phaedra Vokali, Flomaria Papadaki and Efthimis Kosemund-Sanidis, ensuring a prestigious selection of winners. 
-            </p>
-            </section>
+        <div class="section-image video-container">
+          <iframe
+            width="960"
+            height="640"
+            src="https://www.youtube.com/embed/KGxnXymDmOk"
+            title="pt-shorts: Potidania Film Festival (2025 Aftermovie) 🎞️🌄"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
 
-        <section id="dates">
-            <h2>Festival Dates</h2>
-            <p>The festival will take place on <strong>July 26-27, 2025</strong>. <br>
-                <strong>Saturday, July 26th</strong>: Screenings of the selected films and DJ set celebration. <br>
-                <strong>Sunday, July 27th</strong>: Press conference, masterclasses, award ceremony, and closing party.
-            </p>
-        </section>
+      <!-- AWARDS section replaced -->
+      <section id="awards">
+        <h2>pt-shorts Awards 2025</h2>
+        <p>
+          The jury—<strong>Phaedra Vokali, Efthimis Kosemund-Sanidis and Flomaria Papadaki</strong
+          >—presented the following awards:
+        </p>
 
-        <section id="selections">
-            <h2>Festival Selections</h2>
-            <h3>Welcome to the Real World</h3>
-            <ul>
-                <li><strong>Dracaena|Greece</strong></li>
-                <li><strong>Jus d' Orange|France</strong></li>
-                <li><strong>Toast|France</strong></li>
-                <li><strong>Greenhouse|Greece</strong></li>
-                <li><strong>A Real Estate Agent With No Place To Live|Portugal</strong></li>
-                <li><strong>Happy End Day|Ukraine</strong></li>
-            </ul>
-            <h3>Deafening Silence</h3>
-            <ul>
-                <li><strong>Shedding (Descamar)|Brazil</strong></li>
-                <li><strong>SprAY|Netherlands</strong></li>
-                <li><strong>Wings|Greece</strong></li>
-                <li><strong>A Bird Called Memory|Brazil</strong></li>
-                <li><strong>Confrontation|France</strong></li>
-            </ul>
-            <h3>The Burden of the Self</h3>
-            <ul>
-                <li><strong>Superego|Greece</strong></li>
-                <li><strong>LA REPRODUCTION|France</strong></li>
-                <li><strong>SIX|Greece</strong></li>
-                <li><strong>Additional Scenes|Ukraine</strong></li>
-                <li><strong>The Bomb|Turkey</strong></li>
-            </ul>
-        </section>
+        <!-- Replace placeholder with your image path -->
+        <img src="./assets/awards/2025-1.png" alt="Awards Group Photo" class="section-image" />
 
-        <section id="awards">
-            <h2>Award Categories</h2>
-            <ul>
-                <li><strong>Best Movie</strong></li>
-                <li><strong>Best Directing</strong></li>
-                <li><strong>Best Screenplay</strong></li>
-                <li><strong>Best Performance</strong></li>
-                <li><strong>Audience Award</strong></li>
-            </ul>
-        </section>
+        <div class="award-item">
+          <h3>Best Film: Θερμοκήπιο (Greenhouse), by Giorgos Georgakopoulos</h3>
+          <p>
+            For a firmly constructed main character, thrown into a well-crafted dramaturgy that
+            rages around him, and an ending delivered with confidence — answering what needs to be
+            answered, while leaving cinema open, like life.
+          </p>
+        </div>
 
-        <section id="benefits">
-            <h2>Benefits for Selected Filmmakers</h2>
-            <ul>
-                <li><strong>Transportation</strong>: Complimentary transportation from Nafpaktos to Potidania.</li>
-                <li><strong>Hospitality</strong>: Free accommodation and meals for two people per movie over the two-day festival period. In general, the filmmakers coming to our village will have a personal and special treatment as it is one of our main goals to introduce Potidania to others.</li>
-                <li><strong>Promotional Opportunities</strong>: Press opportunities, including a press conference on the festival's second day, social media promotion and a special listing of pt-shorts films on a dedicated Letterboxd list.</li>
-                <li><strong>Masterclasses</strong>: Access to three masterclasses conducted by the festival's pristine jury.</li>
-            </ul>
-        </section>
+        <div class="award-item">
+          <h3>Best Director: Pássaro Memória, by Leonardo Martinelli</h3>
+          <p>
+            Leaping with agility from poetic essay to documentary and then to musical within a
+            matter of minutes, the film illuminates the dark streets of Rio de Janeiro with a light
+            as beautiful as it is fragile — a light we hope will continue to grow stronger.
+          </p>
+        </div>
 
-        <section id="masterclasses">
-            <h2>Masterclasses</h2>
-            <ul>
-                <li><strong>The long game of short stories: how to make a short film in Greece</strong>, by Phaedra Vokali. 26 July, 15:00 | School</li>
-                <li><strong>Acting and Cinema: Present and discontinuities, research, imagination, fragility</strong>, by Flomaria Papadaki. 27 July, 12:00 | School</li>
-                <li><strong>Seeing and hearing, beyond a cinema of high-fidelity</strong>, by Efthimis Kosemund-Sanidis. 27 July, 14:00 | School</li>
-            </ul>
-        </section>
+        <div class="award-item">
+          <h3>Best Screenplay: Agente Imobiliário Sem Casa Para Viver, by Filipe Amorim</h3>
+          <p>
+            In the echo of the Maysles brothers, this film blurs the boundaries of its own
+            construction and patiently, meticulously unravels the contemporary thread of a social
+            concern that ultimately strikes at the heart.
+          </p>
+        </div>
 
-        <section id="submission">
-            <h2>Submission Guidelines</h2>
-            <ul>
-                <li><strong>Genres</strong>: We accept any fiction films, including experimental work; however, documentaries are not eligible for this edition (a documentary category is planned for future editions).</li>
-                <li><strong>Length</strong>: Films can not exceed 30 minutes of total run time.</li>
-                <li><strong>Submission</strong>: Submit your film as a YouTube or Vimeo link with English subtitles (Greek-speaking films only need English subtitles if selected).</li>
-                <li><strong>Selected Films</strong>: Selected films will need to provide a ProRes 422 or DCP file with burnt-in subtitles.</li>
-                <li><strong>Submission Deadline</strong>: May 4, 2025</li>
-                <li><strong>Submission Fees</strong>:</li>
-                <ul>
-                    <li><strong>Greek submissions</strong>: Free for movies directed by a Greek director or movies that were at least partially produced in the country of Greece.</li>
-                    <li><strong>International submissions</strong>: 10€ for non-Greek movies that are not applicable in the "Greek submissions" category.</li>
-                </ul>  
-            </ul>
-            <div class="mt-4">
-                <a href="https://filmfreeway.com/festivals/86231?utm_campaign=pt-shorts&utm_medium=External&utm_source=Submission+Button" target="_blank" title="Click to submit on FilmFreeway"><img src="assets/website-submityourfilm.png" title="Click to submit on FilmFreeway" width="263" height="88"></a>
-            </section>
-        <section id="potidania">
-            <h2>Potidania</h2>
-            <p>Potidania, a small mountain village amphitheatrically built on the slopes of Mount Trikorfo, gazes upon the high mountain ranges of Giona and Vardousia and, lower down, the artificial lake and river of Mornos.
+        <div class="award-item">
+          <h3>Best Acting (shared by):</h3>
+          <ul>
+            <li>
+              <strong>Érika Beatriz Santos (Descamar)</strong>
+              <p>
+                A performance that captivates with its strength and simplicity, from a young actress
+                who, with courage and confidence, invites us into her character’s inner world —
+                reminding us that cinema is first and foremost something we experience with the
+                body.
+              </p>
+            </li>
+            <li>
+              <strong>Coralie Russier (La Confrontation)</strong>
+              <p>
+                For a performance crafted with geometric precision, unafraid of emotion, that gives
+                shape and form to the entire film from the background of a supporting role.
+              </p>
+            </li>
+          </ul>
+        </div>
 
-                It’s worth leaving behind the beautiful and picturesque Doric seaside for a while and, with just a 20-minute drive, finding yourself in the majestic nature where greenery dominates everywhere in and around the village, embraced by the vast fir forest.
-                
-                Stone fountains with cool, running water to quench your thirst, wooden benches at stone vantage points to explore, countless hillsides and ravines to bring peace to your mind.
-                
-                Scattered white chapels on the mountain revive traditional festivals throughout the year, while local taverns offer traditional flavors. Marked trails guide you through the lush forest to the peak of Mount Trikorfo (1,549 meters), where you can admire the entire Corinthian Gulf, stretching from Patras to Corinth.
-                
-                Potidania aims to give you a small taste of its charms and invites you to visit and experience them up close.
-                <br>You can find more information about Potidania on the village's <a href="https://potidaneia.gr/">website</a>:
+        <div class="award-item">
+          <h3>Audience Award: Wings, by Fivos Imellos</h3>
+        </div>
 
-            </p>
-            <!-- <p class="center-align">Here's a bird's-eye view of the village.</p>
-            <div class="video-container">
-                <iframe 
-                  src="https://www.youtube.com/embed/ihblTQPa9hk?si=lvgZH3410g4pXLh3" 
-                  title="YouTube video player" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-                </iframe>
-            </div> -->
+        <img src="./assets/awards/2025-2.png" alt="Best Film Award" class="section-image" />
+      </section>
 
-            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ihblTQPa9hk?si=lvgZH3410g4pXLh3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-        </section>
-        <section id="jury">
-            <h2>Festival Jury</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="assets/old-photos/phaedra.jpg" alt="Phaedra Vokali">
-                    <h3>Phaedra Vokali</h3>
-                    <h4>Director, Screenwriter, Producer</h4>
-                    <div class="bio">
-                        <p></p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/old-photos/flomaria.jpeg" alt="Flomaria Papadaki">
-                    <h3>Flomaria Papadaki</h3>
-                    <h4>Actor</h4>
-                    <div class="bio">
-                        <p></p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/old-photos/efthimis.jpg" alt="Efthimis Kosemund-Sanidis">
-                    <h3>Efthimis Kosemund - Sanidis</h3>
-                    <h4>Director, Screenwriter</h4>
-                    <div class="bio">
-                        <p></p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
+      <!-- JURY section updated with new bios -->
+      <section id="jury">
+        <h2>Festival Jury 2025</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="assets/old-photos/phaedra.jpg" alt="Phaedra Vokali" />
+            <h3>Phaedra Vokali</h3>
+            <h4>Director, Screenwriter, Producer</h4>
+            <div class="bio">
+              <p>
+                Phaedra has produced more than 20 award-winning short films, is an EAVE Producers
+                Network & Torino Film Lab alumnus, and co-founder of Late Bloomers production
+                company. She was the first woman to serve as General Director of the Hellenic Film
+                Academy (2021–2023). In 2022, she made her directorial debut with the short film
+                ENOMENA at the Norwegian Short Film Festival. In 2025, she co-created the
+                documentary US: A Movie About Bloody Hawk and is currently developing her first
+                feature Unholy, supported by the GFC.
+              </p>
             </div>
-        </section>
-
-
-        <section id="team">
-            <h2>Festival Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="assets/old-photos/chrysochoidis_profile copy.jpg" alt="Damianos Chrysochoides">
-                    <h3>Damianos Chrysochoidis</h3>
-                    <h4>Co-Founder | Festival Director</h4>
-                    <div class="bio">
-                        <p>Damianos began his studies at the Athens University of Economics and Business before pursuing his true passion for filmmaking at SAE Athens in 2020. During his studies, he produced the multi award-winning short On the Hill and directed the documentary KOUMI. His thesis film KAPPA is currently on the festival circuit, including selections at Chania Film Festival and Microμ Film Festival. Alongside his creative projects, Damianos freelances as a videographer for businesses, NGOs, and institutions. He is also a member of the founding team of the greek NGO Ecogenia which promotes sustainability through civic engagement, training and employment opportunities for young people. He co-founded pt-shorts: Potidania Film Festival with Panagiotis after combining their common interests in movies and the betterment of their village.</p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/old-photos/baklesis_profile_old.jpg" alt="Panagiotis Baklesis">
-                    <h3>Panagiotis Baklesis</h3>
-                    <h4>Co-Founder | Operations Director</h4>
-                    <div class="bio">
-                        <p>Panagiotis is a software engineer, improviser, stand-up comedian, film buff and has Potidania in his heart. He has experience in volunteering in his student years (AIESEC, board of EESTEC LC Patras). After attending loads of film festivals with Damianos, he decided to embark on this adventure and handle the operational side of pt-shorts / Potidania Film Festival.</p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/old-photos/tsatou_profile.jpeg" alt="Olga Tsatou">
-                    <h3>Olga Tsatou</h3>
-                    <h4>Head of Programming</h4>
-                    <div class="bio">
-                        <p>Olga graduated in 2023 from the Film Department of SAE Creative Media College. Her love for cinema and the festival experience led her to volunteer in the process of film selection and the execution of notable film festivals, such as the Athens International Film Festival (Nyxtes Premieras) and the Athens Marathon Film Festival. The student documentary The Legend of Kavalawood, which she edited and produced, competed in the National Student Section of the Drama Short Film Festival and received positive reviews from Athinorama, Luben, and LIFO. She currently works as a production manager on short and feature films.
-                        </p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/old-photos/stagakis_profile.png" alt="George Stagakis">
-                    <h3>George Stagakis</h3>
-                    <h4>Head of Programming</h4>
-                    <div class="bio">
-                        <p>George completed his bachelor’s at SAE Athens (2020–2023). He has directed the short films On the Hill and Clementine, and edited the documentary Koumi. With 3 years of experience as a video editor for a prominent radio producer, he has also worked as a videographer and editor for two companies and a well-known Greek YouTuber. Additionally, he has directed and edited three music videos and co-directed a commercial for an NGO.</p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/old-photos/avlamis_profile copy.png" alt="Konstantinos R. Avlamis">
-                    <h3>Konstantinos R. Avlamis</h3>
-                    <h4>Head of Programming</h4>
-                    <div class="bio">
-                        <p>Konstantinos is a seasoned video production professional and creative storyteller with a passion for visual arts and cinema. With a background in video editing, and visual effects, Konstantinos has collaborated with diverse teams to bring compelling narratives to life. Holding a BA in Digital Film Production from SAE Institute Athens, he combines technical expertise with a deep appreciation for the art of filmmaking. With a robust portfolio, Konstantinos has worked on a variety of projects, in the post production process, including feature films, TV series, documentaries, social media campaigns, short films, and promotional content. His collaborations with production teams and creative agencies have enabled him to craft compelling narratives and impactful visuals that resonate with audiences.</p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/sotiria-profile.jpg" alt="Sotiria Sdoukou">
-                    <h3>Sotiria Sdoukou</h3>
-                    <h4>Graphic Designer</h4>
-                    <div class="bio">
-                        <p>Sotiria is a graphic designer, graduate of the Graphic Design & Visual Communication Department of the University of West Attica with experience in the field of advertising since 2022. Her special love for cinema and the fact that she grew up in a small village in Epirus, made her stick to the pt-shorts idea from the beginning.</p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="assets/old-photos/DanaiTheologou.jpeg" alt="Danai Theologou">
-                    <h3>Danai Theologou</h3>
-                    <h4>Community & Sponsorship Coordinator</h4>
-                    <div class="bio">
-                        <p>Danai Theologou is a chemist and cinephile with an active presence in the world of festivals and cultural organizing. She has previous experience coordinating volunteer initiatives as a member of a student group at the Aristotle University of Thessaloniki. At pt-shorts, she holds the role of Community & Sponsorship Coordinator, building relationships with the festival's supporters and audience, coordinating collaborations, and ensuring a strong connection between the event and its community. Her goal is to help maintain the festival's open, accessible, and vibrant character. Her deep love for Potidania is the driving force behind her involvement in the organization.</p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
-                <div class="team-member">
-                    <img src="" alt="Michalis Moralis">
-                    <h3>Michalis Moralis</h3>
-                    <h4>Hospitality Coordinator</h4>
-                    <div class="bio">
-                        <p>Michalis has spent more than half his life in Potidania, </p>
-                    </div>
-                    <button class="toggle-btn">Read More</button>
-                </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/old-photos/flomaria.jpeg" alt="Flomaria Papadaki" />
+            <h3>Flomaria Papadaki</h3>
+            <h4>Actor</h4>
+            <div class="bio">
+              <p>
+                Flomaria graduated with honors from the National Theatre of Greece Drama School in
+                2020 and has since collaborated in film with Sofia Exarchou, Yorgos Zois, Alexandros
+                Voulgaris, Kleoniki Stanich, Phaedra Vokali, Isabella Margara, Eleni Poulopoulou,
+                and Angel Saft, and in theater with Ektoras Lygizos, Yannis Skourletis, and Yannis
+                Houvardas. She is a 2023 Talents Sarajevo alumna, and in June 2024, she was honored
+                by the Hellenic Film Academy with the Best Supporting Actress Award for her
+                performance in Animal by Sofia Exarchou.
+              </p>
             </div>
-        </section>
-        <!-- <section id="sponsors">
-            <h2>Sponsors / Partners</h2>
-            <ul>
-                <li>Co-Organisers:<img src="assets/sponsors/sindiorganotes.png" alt="sindiorganotes"></li>
-                <li>Media Sponsor:<img src="assets/sponsors/xorigos_epikoinonias.png" alt="xorigos_epikoinonias"></li>
-                <li>Sponsor:<img src="assets/sponsors/xorigos.png" alt="xorigos"></li>
-                <li>Supporters:<img src="assets/sponsors/ipostiriktes.png" alt="ipostiriktes"></li>
-                <li>Media Partner:<img src="assets/sponsors/media_partner.png" alt="media_partner"></li>
-                <li>Local Partners:<img src="assets/sponsors/topikoi_sinergates.png" alt="topikoi_sinergates"></li>
-                <li>Partner:<img src="assets/sponsors/sinergatis.png" alt="sinergatis"></li>
-            </ul>
-        </section> -->
-        <section id="sponsors">
-            <h2>Sponsors / Partners</h2>
-                <img src="assets/sponsors/sponsor card (9x16) copy.png" alt="main_full">
-        </section>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/old-photos/efthimis.jpg" alt="Efthimis Kosemund-Sanidis" />
+            <h3>Efthimis Kosemund - Sanidis</h3>
+            <h4>Director, Screenwriter</h4>
+            <div class="bio">
+              <p>
+                Born with dual Greek/German nationality, Efthimis studied Informatics Engineering in
+                Athens and Contemporary Arts at Le Fresnoy - Studio National in France. His shorts
+                have been screened and have won acclaim at major film festivals such as Venice,
+                Locarno and Clermont-Ferrand, art venues like Forum des Images, Centre Pompidou and
+                Haus der Kulturen der Welt, and have been distributed on platforms like Festival
+                Scope and Mubi. He is currently finishing his debut feature film.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS section removed -->
+
+      <!-- MASTERCLASSES section replaced -->
+      <section id="masterclasses">
+        <h2>Masterclasses 2025</h2>
+        <p>
+          Three jury-led masterclasses anchored pt-shorts’ educational core, each running ~90
+          minutes with an open-dialogue format.
+        </p>
+
+        <!-- Replace placeholders with your image paths -->
+        <img
+          src="./assets/masterclasses/2025-1.png"
+          alt="Masterclass Audience"
+          class="section-image"
+        />
+        <img
+          src="./assets/masterclasses/2025-2.png"
+          alt="Masterclass Presentation"
+          class="section-image"
+        />
+
+        <div class="masterclass-item">
+          <h3>
+            Phaedra Vokali — “Small Stories, Big Experiences: How to Make a Short Film in Greece”
+          </h3>
+          <p>
+            How can I make my first film with no budget? How do I prepare a funding application? How
+            can I find a producer? This seminar addressed these and other questions, drawing
+            inspiration and material from past experiences — successes, mistakes, and unexpected
+            mishaps that were transformed into knowledge.
+          </p>
+          <!-- Replace placeholder with your image path -->
+          <img
+            src="./assets/judges/phaedra-vokali-profile.png"
+            alt="Phaedra Vokali Masterclass"
+            class="section-image"
+          />
+        </div>
+
+        <div class="masterclass-item">
+          <h3>
+            Flomaria Papadaki — “Acting and Cinema: Present and Discontinuities, Research,
+            Imagination, Fragility”
+          </h3>
+          <p>
+            The possible pathways and the personal tools of actors from the first encounter with the
+            script to the actual shooting, in order to be present in front of the camera with
+            credibility, honesty, and freedom.
+          </p>
+          <!-- Replace placeholder with your image path -->
+          <img
+            src="./assets/judges/flomaria-papadaki-profile.png"
+            alt="Flomaria Papadaki Masterclass"
+            class="section-image"
+          />
+        </div>
+
+        <div class="masterclass-item">
+          <h3>
+            Efthimis Kosemund-Sanidis — “Seeing and Hearing, Beyond a Cinema of High-Fidelity”
+          </h3>
+          <p>
+            Cinema, as a technical —and potentially artistic— medium, often carries with it goals of
+            technical perfection that often tend to automatically dominate the process, a
+            high-fidelity approach that smooths out rough edges and dulls personal language, in
+            other words, the very condition for articulating a cinematic voice with intention. How
+            can the filmmaker render the technical aspect of their craft transparent, embrace
+            imperfection and simply manage to see and to hear?
+          </p>
+          <!-- Replace placeholder with your image path -->
+          <img
+            src="./assets/judges/efthimis-kosemund-sanidis-profile.png"
+            alt="Efthimis Kosemund-Sanidis Masterclass"
+            class="section-image"
+          />
+        </div>
+      </section>
+
+      <!-- SUBMISSION section removed -->
+
+      <!-- POTIDANIA section updated (text was identical but replaced for safety) -->
+      <section id="potidania">
+        <h2>Potidania</h2>
+        <p>
+          Potidania, a small mountain village amphitheatrically built on the slopes of Mount
+          Trikorfo, gazes upon the high mountain ranges of Giona and Vardousia and, lower down, the
+          artificial lake and river of Mornos. It’s worth leaving behind the beautiful and
+          picturesque Doric seaside for a while and, with just a 20-minute drive, finding yourself
+          in the majestic nature where greenery dominates everywhere in and around the village,
+          embraced by the vast fir forest. Stone fountains with cool, running water to quench your
+          thirst, wooden benches at stone vantage points to explore, countless hillsides and ravines
+          to bring peace to your mind. Scattered white chapels on the mountain revive traditional
+          festivals throughout the year, while local taverns offer traditional flavors. Marked
+          trails guide you through the lush forest to the peak of Mount Trikorfo (1,549 meters),
+          where you can admire the entire Corinthian Gulf, stretching from Patras to Corinth.
+          Potidania aims to give you a small taste of its charms and invites you to visit and
+          experience them up close. <br /><br />You can find more information about Potidania on the
+          village's <a href="https://potidaneia.gr/" target="_blank">website</a>.
+        </p>
+      </section>
+
+      <!-- TEAM section updated and reordered -->
+      <section id="team">
+        <h2>Festival Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img
+              src="assets/old-photos/chrysochoidis_profile copy.jpg"
+              alt="Damianos Chrysochoides"
+            />
+            <h3>Damianos Chrysochoidis</h3>
+            <h4>Co-Founder | Festival Director</h4>
+            <div class="bio">
+              <p>
+                Damianos began his studies at the Athens University of Economics and Business before
+                pursuing his true passion for filmmaking at SAE Athens in 2020. During his studies,
+                he produced the multi award-winning short On the Hill and directed the documentary
+                KOUMI. His thesis film KAPPA is currently on the festival circuit, including
+                selections at Chania Film Festival and Microμ Film Festival. Alongside his creative
+                projects, Damianos freelances as a videographer for businesses, NGOs, and
+                institutions. He is also a member of the founding team of the greek NGO Ecogenia
+                which promotes sustainability through civic engagement, training and employment
+                opportunities for young people. He co-founded pt-shorts: Potidania Film Festival
+                with Panagiotis after combining their common interests in movies and the betterment
+                of their village.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/old-photos/DanaiTheologou.jpeg" alt="Danai Theologou" />
+            <h3>Danai Theologou</h3>
+            <h4>Community & Sponsorship Coordinator</h4>
+            <div class="bio">
+              <p>
+                Danai Theologou is a chemist and cinephile with an active presence in the world of
+                festivals and cultural organizing. She has previous experience coordinating
+                volunteer initiatives as a member of a student group at the Aristotle University of
+                Thessaloniki. At pt-shorts, she holds the role of Community & Sponsorship
+                Coordinator, building relationships with the festival's supporters and audience,
+                coordinating collaborations, and ensuring a strong connection between the event and
+                its community. Her goal is to help maintain the festival's open, accessible, and
+                vibrant character. Her deep love for Potidania is the driving force behind her
+                involvement in the organization.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/stella-profile.png" alt="Danai Theologou" />
+            <h3>Stella Theologou</h3>
+            <h4>Chief of Marketing</h4>
+            <div class="bio">
+              <p>
+                Stella studied Business Administration and Communication and began her career at OTE
+                Group, participating in the production of nationwide 360° campaigns and television
+                projects — an experience that revealed her passion for creative storytelling and
+                production. She has since been actively involved in the organization of volunteer
+                initiatives and cultural events, driven by her love for art, people, and collective
+                creation. Deeply inspired by nature, cinema, and photography, Stella finds meaning
+                in bringing stories to life — both in front of and behind the lens. At pt·shorts:
+                Potidania Film Festival, she leads the communication strategy, highlighting the
+                festival’s authentic bond between film, community, and the breathtaking beauty of
+                the mountains that surround it.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/old-photos/tsatou_profile.jpeg" alt="Olga Tsatou" />
+            <h3>Olga Tsatou</h3>
+            <h4>Head of Programming</h4>
+            <div class="bio">
+              <p>
+                Olga graduated in 2023 from the Film Department of SAE Creative Media College. Her
+                love for cinema and the festival experience led her to volunteer in the process of
+                film selection and the execution of notable film festivals, such as the Athens
+                International Film Festival (Nyxtes Premieras) and the Athens Marathon Film
+                Festival. The student documentary The Legend of Kavalawood, which she edited and
+                produced, competed in the National Student Section of the Drama Short Film Festival
+                and received positive reviews from Athinorama, Luben, and LIFO. She currently works
+                as a production manager on short and feature films.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/old-photos/stagakis_profile.png" alt="George Stagakis" />
+            <h3>George Stagakis</h3>
+            <h4>Head of Programming</h4>
+            <div class="bio">
+              <p>
+                George completed his bachelor’s at SAE Athens (2020–2023). He has directed the short
+                films On the Hill and Clementine, and edited the documentary Koumi. With 3 years of
+                experience as a video editor for a prominent radio producer, he has also worked as a
+                videographer and editor for two companies and a well-known Greek YouTuber.
+                Additionally, he has directed and edited three music videos and co-directed a
+                commercial for an NGO.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/old-photos/avlamis_profile copy.png" alt="Konstantinos R. Avlamis" />
+            <h3>Konstantinos R. Avlamis</h3>
+            <h4>Head of Programming</h4>
+            <div class="bio">
+              <p>
+                Konstantinos is a seasoned video production professional and creative storyteller
+                with a passion for visual arts and cinema. With a background in video editing, and
+                visual effects, Konstantinos has collaborated with diverse teams to bring compelling
+                narratives to life. Holding a BA in Digital Film Production from SAE Institute
+                Athens, he combines technical expertise with a deep appreciation for the art of
+                filmmaking. With a robust portfolio, Konstantinos has worked on a variety of
+                projects, in the post production process, including feature films, TV series,
+                documentaries, social media campaigns, short films, and promotional content. His
+                collaborations with production teams and creative agencies have enabled him to craft
+                compelling narratives and impactful visuals that resonate with audiences.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/sotiria-profile.jpg" alt="Sotiria Sdoukou" />
+            <h3>Sotiria Sdoukou</h3>
+            <h4>Graphic Designer</h4>
+            <div class="bio">
+              <p>
+                Sotiria is a graphic designer, graduate of the Graphic Design & Visual Communication
+                Department of the University of West Attica with experience in the field of
+                advertising since 2022. Her special love for cinema and the fact that she grew up in
+                a small village in Epirus, made her stick to the pt-shorts idea from the beginning.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+          <div class="team-member">
+            <img src="assets/old-photos/baklesis_profile_old.jpg" alt="Panagiotis Baklesis" />
+            <h3>Panagiotis Baklesis</h3>
+            <h4>Co-Founder | Operations Director</h4>
+            <div class="bio">
+              <p>
+                Panagiotis is a software engineer, improviser, stand-up comedian, film buff and has
+                Potidania in his heart. He has experience in volunteering in his student years
+                (AIESEC, board of EESTEC LC Patras). After attending loads of film festivals with
+                Damianos, he decided to embark on this adventure and handle the operational side of
+                pt-shorts / Potidania Film Festival.
+              </p>
+            </div>
+            <button class="toggle-btn">Read More</button>
+          </div>
+        </div>
+      </section>
+      <section id="sponsors">
+        <h2>Sponsors / Partners 2025</h2>
+        <img src="assets/sponsors/sponsor card (9x16) copy.png" alt="main_full" />
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 pt-shorts: Potidania Film Festival</p>
-        <p>Contact: ptshorts.filmfestival@gmail.com <a href="https://www.instagram.com/ptshorts_filmfestival/" target="_blank"><img src="assets/logos/Instagram_Glyph_White.svg" width="15" height="15"></a> <a href="https://www.facebook.com/profile.php?id=61572843686159" target="_blank"><img src="assets/logos/Facebook_Logo_Secondary.png" width="15" height="15"></a>
-     </p>
+      <p>&copy; 2025 pt-shorts: Potidania Film Festival</p>
+      <p>
+        Contact: ptshorts.filmfestival@gmail.com
+        <a href="https://www.instagram.com/ptshorts_filmfestival/" target="_blank"
+          ><img src="assets/logos/Instagram_Glyph_White.svg" width="15" height="15" alt="Instagram"
+        /></a>
+        <a href="https://www.facebook.com/profile.php?id=61572843686159" target="_blank"
+          ><img
+            src="assets/logos/Facebook_Logo_Secondary.png"
+            width="15"
+            height="15"
+            alt="Facebook"
+        /></a>
+      </p>
     </footer>
 
     <script>
-        document.querySelectorAll('.toggle-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const bio = button.previousElementSibling;
-                bio.classList.toggle('expanded');
-                button.textContent = bio.classList.contains('expanded') ? 'Read Less' : 'Read More';
-            });
-        });
+      document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const bio = button.previousElementSibling
+          bio.classList.toggle('expanded')
+          button.textContent = bio.classList.contains('expanded') ? 'Read Less' : 'Read More'
+        })
+      })
     </script>
-    
+
     <script>
-        function toggleNav() {
-            const nav = document.getElementById("myTopnav");
-            nav.classList.toggle("responsive");
+      function toggleNav() {
+        const nav = document.getElementById('myTopnav')
+        nav.classList.toggle('responsive')
+      }
+
+      // Highlighting sections on scroll
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section')
+        const navLinks = document.querySelectorAll('.topnav a.nav-link') // Only select nav links
+        let currentSectionId = ''
+
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect()
+          // Adjust threshold to be smaller, e.g., 60 (height of nav) + 10
+          const topOffset = 70
+
+          if (rect.top <= topOffset && rect.bottom >= topOffset) {
+            currentSectionId = section.id
+          }
+        })
+
+        // Fallback for bottom of page
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+          // Get last section
+          if (sections.length > 0) {
+            const lastSection = sections[sections.length - 1]
+            // Check if last section is in view
+            const rect = lastSection.getBoundingClientRect()
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+              currentSectionId = lastSection.id
+            }
+          }
         }
-    
-        // Highlighting sections on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.topnav a');
-    
-            let currentSectionId = '';
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const top = rect.top - window.innerHeight * 0.2; // Adjust for a better trigger point
-                const bottom = rect.bottom;
-    
-                if (top <= 0 && bottom > 0) {
-                    currentSectionId = section.id;
-                }
-            });
-    
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${currentSectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+
+        // Fallback for top of page
+        if (window.scrollY < 50) {
+          const firstSection = sections[0]
+          if (firstSection) {
+            currentSectionId = firstSection.id
+          }
+        }
+
+        navLinks.forEach(link => {
+          link.classList.remove('active')
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active')
+          }
+        })
+      })
     </script>
-    
-    
-    
+
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetSection = document.querySelector(this.getAttribute('href'));
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start' // Ensures the heading aligns at the top
-                });
-            });
-        });
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault()
+          const targetSection = document.querySelector(this.getAttribute('href'))
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start', // Ensures the heading aligns at the top
+            })
+          }
+        })
+      })
     </script>
-    
-</body>
+  </body>
 </html>

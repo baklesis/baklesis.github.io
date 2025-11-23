@@ -31,6 +31,33 @@
         text-align: center;
       }
 
+      /* 1. Container to center the inline anchor tag */
+    .button-container {
+      text-align: center; /* Centers the content inside this div */
+      padding-top: 20px; /* Optional: adds some space around the button */
+    }
+
+    /* 2. Hover effect: make the button slightly smaller on hover */
+    .submission-button:hover {
+      opacity: 0.9; /* Slightly transparent */
+      transform: scale(0.98); /* Shrinks the button a tiny bit */
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Smooth transition */
+    }
+
+    /* Optional: Ensure the default state has a transition for a smooth starting point */
+    .submission-button {
+      display: inline-block; /* Essential for transform to work */
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    }
+
+      .video-container {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 15px auto;
+        display: block;
+      }
+
       .video-container iframe {
         width: 100%;
         /* Standard YouTube width */
@@ -333,6 +360,7 @@
 
     <!-- Navigation bar updated to remove links to deleted sections -->
     <nav class="topnav" id="myTopnav">
+      <a href="#registration" class="nav-link">Registration</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#awards" class="nav-link">Awards</a>
       <a href="#jury" class="nav-link">Jury</a>
@@ -353,6 +381,50 @@
     </nav>
 
     <main class="container">
+      <section id="registration">
+        <h2>Submit your film on Film Freeway!</h2>
+
+        <img src="./assets/registration/film-freeway.png" alt="Film Freeway" class="section-image" />
+
+        <h3 style="margin: 15px auto;">Benefits for Selected Filmmakers:</h3>
+
+        <p>
+          <strong>Transportation:</strong> Complimentary transportation from Nafpaktos to Potidania.
+        </p>
+
+        <p>
+          <strong>Hospitality:</strong> Free accommodation and meals for two people per movie over the
+          two-day festival period. In general, the filmmakers coming to our village will have a
+          personal and special treatment as it is one of our main goals to introduce Potidania to others.
+        </p>
+
+        <p>
+          <strong>Promotional Opportunities:</strong> Press opportunities, including a press conference
+          on the festival's second day, social media promotion, a special listing of pt-shorts films
+          on a dedicated Letterboxd list and promotional events before and after the festival in Athens.
+          A great example is the projection of the award winning films of pt-shorts 2025 in the
+          Cinobo Patision movie theater.
+        </p>
+
+        <p>
+          <strong>Masterclasses:</strong> Access to three masterclasses conducted by the festival's
+          pristine jury.
+        </p>
+
+        <p>
+          The Jury of 2025 included Phaedra Vokali, Efthimis Kosemund-Sanidis and Flomaria Papadaki.
+          Our Jury of 2026 will be announced until the end of April.
+        </p>
+
+        <div class="button-container">
+          <a class="submission-button"
+            href="https://filmfreeway.com/festivals/86231?utm_campaign=pt-shorts&utm_medium=External&utm_source=Submission+Button"
+            target="_blank" title="Click to submit on FilmFreeway">
+            <img src="https://public-assets.filmfreeway.com/submission_buttons/v2/sm_submission_btn@2x-purple-gradient.png"
+              title="Click to submit on FilmFreeway" width="263" height="49">
+          </a>
+        </div>
+      </section>
       <!-- ABOUT section updated -->
       <section id="about">
         <h2>Festival Overview</h2>
@@ -374,7 +446,7 @@
           masterclasses, a press conference, and an awards ceremony.
         </p>
 
-        <div class="section-image video-container">
+        <div class="video-container">
           <iframe
             width="960"
             height="640"
@@ -400,7 +472,7 @@
         <img src="./assets/awards/2025-1.png" alt="Awards Group Photo" class="section-image" />
 
         <div class="award-item">
-          <h3>Best Film: Θερμοκήπιο (Greenhouse), by Giorgos Georgakopoulos</h3>
+          <h3>Best Film: Greenhouse, by Giorgos Georgakopoulos</h3>
           <p>
             For a firmly constructed main character, thrown into a well-crafted dramaturgy that
             rages around him, and an ending delivered with confidence — answering what needs to be
@@ -768,7 +840,7 @@
       </section>
       <section id="sponsors">
         <h2>Sponsors / Partners 2025</h2>
-        <img src="assets/sponsors/sponsor card (9x16) copy.png" alt="main_full" />
+        <img src="assets/sponsors/sponsors - single row.png" alt="main_full" style="max-width: 100%; height: auto;" />
       </section>
     </main>
 

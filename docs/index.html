@@ -67,6 +67,40 @@
         /* Remove default iframe border */
       }
 
+      .sponsor-logo {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 15px auto;
+        display: block;
+      }
+
+      /* Hide Tablet and Mobile images by default */
+      .tablet-image,
+      .mobile-image {
+        display: none;
+      }
+
+      /* --- TABLET VIEW (up to 1024px) --- */
+      @media screen and (max-width: 1024px) {
+        .desktop-image {
+          display: none; /* Hide PC image */
+        }
+        .tablet-image {
+          display: block; /* Show Tablet image */
+        }
+      }
+
+      /* --- MOBILE VIEW (up to 600px) --- */
+      @media screen and (max-width: 600px) {
+        .tablet-image {
+          display: none; /* Hide Tablet image */
+        }
+        .mobile-image {
+          display: block; /* Show Mobile image */
+        }
+      }
+
       ul {
         padding-left: 30px;
       }
@@ -840,7 +874,17 @@
       </section>
       <section id="sponsors">
         <h2>Sponsors / Partners 2025</h2>
-        <img src="assets/sponsors/sponsors - single row.png" alt="main_full" style="max-width: 100%; height: auto;" />
+        <div class="center-align">
+
+          <img src="assets/sponsors/logos 16x9 new.png" alt="Festival Sponsors PC View"
+            class="sponsor-logo desktop-image">
+
+          <img src="assets/sponsors/logos 16x9 new.png" alt="Festival Sponsors Tablet View"
+            class="sponsor-logo tablet-image">
+
+          <img src="assets/sponsors/logos 16x9 new.png" alt="Festival Sponsors Mobile View" class="sponsor-logo mobile-image">
+
+        </div>
       </section>
     </main>
 

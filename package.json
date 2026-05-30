@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "validate": "bash scripts/validate.sh"
+  },
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "html-validate": "^9.0.0"
+  }
+}

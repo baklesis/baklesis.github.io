@@ -7,7 +7,7 @@ Static GitHub Pages site. No build step, no package manager, no tests.
 - Pushed from `docs/` subdirectory (GitHub Pages serves from `/docs`).
 - Custom domain `pt-shorts.gr` — CNAME at repo root AND `docs/CNAME` both needed.
 - `git push origin main` → auto-deploys. No action / workflow file.
-- Pre-commit hooks via Husky: run `npm install` after clone. Hook runs `npm run validate`.
+- Pre-commit hooks via Husky: run `npm install` after clone. Hook runs `npm run format && git add -A && npm run validate`.
 
 ## Validation (`npm run validate`)
 

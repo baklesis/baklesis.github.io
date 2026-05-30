@@ -2,10 +2,12 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
+    "format": "prettier --write 'docs/**/*.html'",
     "validate": "bash scripts/validate.sh"
   },
   "devDependencies": {
+    "html-validate": "^9.0.0",
     "husky": "^9.0.0",
-    "html-validate": "^9.0.0"
+    "prettier": "^3.8.3"
   }
 }

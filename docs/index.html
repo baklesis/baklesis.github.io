@@ -308,6 +308,34 @@
         background-color: #2980b9;
       }
 
+      .submission-closed {
+        display: inline-block;
+        padding: 14px 22px;
+        background-color: #e0e0e0;
+        color: #555555;
+        border: 1px solid #cccccc;
+        border-radius: 999px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+      }
+
+      .submission-closed strong {
+        color: #222222;
+      }
+
+      .submission-button.disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+
+      .submission-status {
+        margin-top: 14px;
+        color: #555555;
+        font-weight: 700;
+      }
+
       .bio {
         max-height: 150px;
         /* Adjust based on the desired initial visible height */
@@ -371,6 +399,70 @@
         max-width: 600px;
       }
 
+      .experience-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 15px;
+      }
+
+      .experience-item {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .experience-item h4 {
+        margin-bottom: 10px;
+      }
+
+      .experience-item a.experience-button {
+        display: block;
+        width: fit-content;
+        margin: 18px auto 0;
+        padding: 14px 22px;
+        background: linear-gradient(135deg, #8e44ad, #b670f9);
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 14px;
+        font-weight: 700;
+        box-shadow: 0 12px 24px rgba(182, 112, 249, 0.28);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .experience-item a.experience-button:hover,
+      .experience-item a.experience-button:focus {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 18px 30px rgba(182, 112, 249, 0.35);
+        background: linear-gradient(135deg, #a259e9, #d09cff);
+      }
+
+      .experience-item a.experience-button:focus {
+        outline: 3px solid rgba(182, 112, 249, 0.45);
+        outline-offset: 4px;
+      }
+
+      #selection ol {
+        /* list-style: none; */
+        margin-left: 30px;
+      }
+
+      #selection ol li {
+        padding: 6px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      #selection ol li:last-child {
+        border-bottom: none;
+      }
+
+      @media (max-width: 600px) {
+        .experience-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       footer {
         background-color: var(--primary-color);
         color: white;
@@ -395,13 +487,11 @@
     <!-- Navigation bar updated to remove links to deleted sections -->
     <nav class="topnav" id="myTopnav">
       <a href="#registration" class="nav-link">Registration</a>
+      <a href="#selection" class="nav-link">Selection</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="#awards" class="nav-link">Awards</a>
-      <a href="#jury" class="nav-link">Jury</a>
-      <a href="#masterclasses" class="nav-link">Masterclasses</a>
       <a href="#potidania" class="nav-link">Potidania</a>
       <a href="#team" class="nav-link">Team</a>
-      <a href="#sponsors" class="nav-link">Sponsors</a>
+      <a href="/2025/" class="nav-link">2025</a>
       <a href="https://www.instagram.com/ptshorts_filmfestival/" target="_blank"
         ><img src="assets/logos/Instagram_Glyph_White.svg" width="25" height="25" alt="Instagram"
       /></a>
@@ -416,290 +506,76 @@
 
     <main class="container">
       <section id="registration">
-        <h2>Submit your film on Film Freeway!</h2>
+        <h2>Experience the 2nd pt-shorts: Potidania Film Festival</h2>
 
-        <img src="./assets/registration/festival.jpeg" alt="Film Freeway" class="section-image" />
-
-        <h3 style="margin: 15px auto;">Benefits for Selected Filmmakers:</h3>
+        <img src="./assets/registration/ptshorts-2026.png" alt="pt-shorts 2026" class="section-image" />
 
         <p>
-          <strong>Transportation:</strong> Complimentary transportation from Nafpaktos to Potidania.
+          <strong>25–26 July 2026 | Potidania, Dorida, Greece</strong>
+        </p>
+        <p>
+          The 2nd edition of pt-shorts returns to Potidania, transforming a mountain village
+          into an open meeting point for cinema, creativity and people.
         </p>
 
         <p>
-          <strong>Hospitality:</strong> Free accommodation and meals for two people per movie over the
-          two-day festival period. In general, the filmmakers coming to our village will have a
-          personal and special treatment as it is one of our main goals to introduce Potidania to others.
+          <br /> Over two days, visitors and creators will experience:
         </p>
 
-        <p>
-          <strong>Promotional Opportunities:</strong> Press opportunities, including a press conference
-          on the festival's second day, social media promotion, a special listing of pt-shorts films
-          on a dedicated Letterboxd list and promotional events before and after the festival in Athens.
-          A great example is the projection of the award winning films of pt-shorts 2025 in the
-          Cinobo Patision movie theater.
-        </p>
+        <ul>
+          <li><strong>Film Screenings:</strong> 12 Greek and international short films projected under Potidania’s starry sky</li>
+          <li><strong>Masterclasses & Workshops:</strong> Four certified masterclasses and workshops led by professionals from the film industry.</li>
+          <li><strong>Topics and speakers</strong> will be announced soon.</li>
+          <li><strong>Press Conference (Q&A):</strong> Meet filmmakers, and learn more about their films.</li>
+          <li><strong>Jury & Awards:</strong> The official jury and festival program for the 2026 edition will be announced soon.</li>
+          <li><strong>Community & Village Experience:</strong> A festival connected to the local community and the unique atmosphere of Potidania.</li>
+          <li><strong>Hospitality Experience:</strong> Accommodation options, local food experiences and opportunities to discover the area.</li>
+          <li><strong>Music & Festival Moments:</strong> DJ sets, gatherings and experiences extending beyond the screenings.</li>
+        </ul>
 
-        <p>
-          <strong>Masterclasses:</strong> Access to three masterclasses conducted by the festival's
-          pristine jury.
-        </p>
 
-        <p>
-          The Jury of 2025 included Phaedra Vokali, Efthimis Kosemund-Sanidis and Flomaria Papadaki.
-          Our Jury of 2026 will be announced until the end of April.
-        </p>
+        <hr style="margin: 30px 0;">
 
-        <div class="button-container">
-          <a class="submission-button"
-            href="https://filmfreeway.com/festivals/86231?utm_campaign=pt-shorts&utm_medium=External&utm_source=Submission+Button"
-            target="_blank" title="Click to submit on FilmFreeway">
-            <img src="https://public-assets.filmfreeway.com/submission_buttons/v2/sm_submission_btn@2x-purple-gradient.png"
-              title="Click to submit on FilmFreeway" width="263" height="49">
-          </a>
-        </div>
-      </section>
-      <!-- ABOUT section updated -->
-      <section id="about">
-        <h2>Festival Overview</h2>
-        <p>
-          <strong>pt-shorts: Potidania Film Festival</strong> is an emerging short film festival set
-          in the picturesque mountainous village of Potidania, Greece. With great success, the 1st
-          pt-shorts: Potidania Film Festival concluded on July 26–27, 2025, in the mountainous
-          village of Potidania, in the Dorida region. The festival attracted more than 500 attendees
-          to Saturday’s screenings, while approximately 200 visitors stayed at least for one night
-          for the first time in Potidania, Palaioxari, and Teichio—highlighting cultural tourism and
-          the short film industry with pt-shorts as a key pillar.
-        </p>
-        <p>
-          <br />A total of 40 volunteers—half of whom have no ties to the village—played a decisive
-          role in delivering the event, which drew strong participation from filmmakers. A highlight
-          was the presence of two international directors from France and Portugal, who visited
-          Greece for the first time and presented their films to the Potidania audience. The program
-          included screenings of 16 short films (11 international and 5 national), jury-led
-          masterclasses, a press conference, and an awards ceremony.
-        </p>
+        <h3>Join the Experience</h3>
 
-        <div class="video-container">
-          <iframe
-            width="960"
-            height="640"
-            src="https://www.youtube.com/embed/KGxnXymDmOk"
-            title="pt-shorts: Potidania Film Festival (2025 Aftermovie) 🎞️🌄"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </section>
-
-      <!-- AWARDS section replaced -->
-      <section id="awards">
-        <h2>pt-shorts Awards 2025</h2>
-        <p>
-          The jury—<strong>Phaedra Vokali, Efthimis Kosemund-Sanidis and Flomaria Papadaki</strong
-          >—presented the following awards:
-        </p>
-
-        <!-- Replace placeholder with your image path -->
-        <img src="./assets/awards/2025-1.png" alt="Awards Group Photo" class="section-image" />
-
-        <div class="award-item">
-          <h3>Best Film: Greenhouse, by Giorgos Georgakopoulos</h3>
-          <p>
-            For a firmly constructed main character, thrown into a well-crafted dramaturgy that
-            rages around him, and an ending delivered with confidence — answering what needs to be
-            answered, while leaving cinema open, like life.
-          </p>
-        </div>
-
-        <div class="award-item">
-          <h3>Best Director: Pássaro Memória, by Leonardo Martinelli</h3>
-          <p>
-            Leaping with agility from poetic essay to documentary and then to musical within a
-            matter of minutes, the film illuminates the dark streets of Rio de Janeiro with a light
-            as beautiful as it is fragile — a light we hope will continue to grow stronger.
-          </p>
-        </div>
-
-        <div class="award-item">
-          <h3>Best Screenplay: Agente Imobiliário Sem Casa Para Viver, by Filipe Amorim</h3>
-          <p>
-            In the echo of the Maysles brothers, this film blurs the boundaries of its own
-            construction and patiently, meticulously unravels the contemporary thread of a social
-            concern that ultimately strikes at the heart.
-          </p>
-        </div>
-
-        <div class="award-item">
-          <h3>Best Acting (shared by):</h3>
-          <ul>
-            <li>
-              <strong>Érika Beatriz Santos (Descamar)</strong>
-              <p>
-                A performance that captivates with its strength and simplicity, from a young actress
-                who, with courage and confidence, invites us into her character’s inner world —
-                reminding us that cinema is first and foremost something we experience with the
-                body.
-              </p>
-            </li>
-            <li>
-              <strong>Coralie Russier (La Confrontation)</strong>
-              <p>
-                For a performance crafted with geometric precision, unafraid of emotion, that gives
-                shape and form to the entire film from the background of a supporting role.
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="award-item">
-          <h3>Audience Award: Wings, by Fivos Imellos</h3>
-        </div>
-
-        <img src="./assets/awards/2025-2.png" alt="Best Film Award" class="section-image" />
-      </section>
-
-      <!-- JURY section updated with new bios -->
-      <section id="jury">
-        <h2>Festival Jury 2025</h2>
-        <div class="team-grid">
-          <div class="team-member">
-            <img src="assets/old-photos/phaedra.jpg" alt="Phaedra Vokali" />
-            <h3>Phaedra Vokali</h3>
-            <h4>Director, Screenwriter, Producer</h4>
-            <div class="bio">
-              <p>
-                Phaedra has produced more than 20 award-winning short films, is an EAVE Producers
-                Network & Torino Film Lab alumnus, and co-founder of Late Bloomers production
-                company. She was the first woman to serve as General Director of the Hellenic Film
-                Academy (2021–2023). In 2022, she made her directorial debut with the short film
-                ENOMENA at the Norwegian Short Film Festival. In 2025, she co-created the
-                documentary US: A Movie About Bloody Hawk and is currently developing her first
-                feature Unholy, supported by the GFC.
-              </p>
-            </div>
-            <button class="toggle-btn">Read More</button>
+        <div class="experience-grid">
+          <div class="experience-item">
+            <h4>Hospitality Registration</h4>
+            <p>Looking for accommodation or interested in hosting/supporting hospitality?</p>
+            <p><a href="#placeholder-hospitality" class="experience-button">Sign the form</a></p>
           </div>
-          <div class="team-member">
-            <img src="assets/old-photos/flomaria.jpeg" alt="Flomaria Papadaki" />
-            <h3>Flomaria Papadaki</h3>
-            <h4>Actor</h4>
-            <div class="bio">
-              <p>
-                Flomaria graduated with honors from the National Theatre of Greece Drama School in
-                2020 and has since collaborated in film with Sofia Exarchou, Yorgos Zois, Alexandros
-                Voulgaris, Kleoniki Stanich, Phaedra Vokali, Isabella Margara, Eleni Poulopoulou,
-                and Angel Saft, and in theater with Ektoras Lygizos, Yannis Skourletis, and Yannis
-                Houvardas. She is a 2023 Talents Sarajevo alumna, and in June 2024, she was honored
-                by the Hellenic Film Academy with the Best Supporting Actress Award for her
-                performance in Animal by Sofia Exarchou.
-              </p>
-            </div>
-            <button class="toggle-btn">Read More</button>
-          </div>
-          <div class="team-member">
-            <img src="assets/old-photos/efthimis.jpg" alt="Efthimis Kosemund-Sanidis" />
-            <h3>Efthimis Kosemund - Sanidis</h3>
-            <h4>Director, Screenwriter</h4>
-            <div class="bio">
-              <p>
-                Born with dual Greek/German nationality, Efthimis studied Informatics Engineering in
-                Athens and Contemporary Arts at Le Fresnoy - Studio National in France. His shorts
-                have been screened and have won acclaim at major film festivals such as Venice,
-                Locarno and Clermont-Ferrand, art venues like Forum des Images, Centre Pompidou and
-                Haus der Kulturen der Welt, and have been distributed on platforms like Festival
-                Scope and Mubi. He is currently finishing his debut feature film.
-              </p>
-            </div>
-            <button class="toggle-btn">Read More</button>
+
+          <div class="experience-item">
+            <h4>Become a Volunteer</h4>
+            <p>Help us bring pt-shorts to life and become part of the festival team.</p>
+            <p><a href="#placeholder-volunteer" class="experience-button">Sign the form</a></p>
           </div>
         </div>
       </section>
 
-      <!-- BENEFITS section removed -->
 
-      <!-- MASTERCLASSES section replaced -->
-      <section id="masterclasses">
-        <h2>Masterclasses 2025</h2>
-        <p>
-          Three jury-led masterclasses anchored pt-shorts’ educational core, each running ~90
-          minutes with an open-dialogue format.
-        </p>
+      <section id="selection">
+        <h2>Our 2026 pt-shorts Official Selection</h2>
 
-        <!-- Replace placeholders with your image paths -->
-        <img
-          src="./assets/masterclasses/2025-1.png"
-          alt="Masterclass Audience"
-          class="section-image"
-        />
-        <img
-          src="./assets/masterclasses/2025-2.png"
-          alt="Masterclass Presentation"
-          class="section-image"
-        />
+        <img src="./assets/registration/selection-lineup.png" alt="selection lineup" class="section-image" />
 
-        <div class="masterclass-item">
-          <h3>
-            Phaedra Vokali — “Small Stories, Big Experiences: How to Make a Short Film in Greece”
-          </h3>
-          <p>
-            How can I make my first film with no budget? How do I prepare a funding application? How
-            can I find a producer? This seminar addressed these and other questions, drawing
-            inspiration and material from past experiences — successes, mistakes, and unexpected
-            mishaps that were transformed into knowledge.
-          </p>
-          <!-- Replace placeholder with your image path -->
-          <img
-            src="./assets/judges/phaedra-vokali-profile.png"
-            alt="Phaedra Vokali Masterclass"
-            class="section-image"
-          />
-        </div>
-
-        <div class="masterclass-item">
-          <h3>
-            Flomaria Papadaki — “Acting and Cinema: Present and Discontinuities, Research,
-            Imagination, Fragility”
-          </h3>
-          <p>
-            The possible pathways and the personal tools of actors from the first encounter with the
-            script to the actual shooting, in order to be present in front of the camera with
-            credibility, honesty, and freedom.
-          </p>
-          <!-- Replace placeholder with your image path -->
-          <img
-            src="./assets/judges/flomaria-papadaki-profile.png"
-            alt="Flomaria Papadaki Masterclass"
-            class="section-image"
-          />
-        </div>
-
-        <div class="masterclass-item">
-          <h3>
-            Efthimis Kosemund-Sanidis — “Seeing and Hearing, Beyond a Cinema of High-Fidelity”
-          </h3>
-          <p>
-            Cinema, as a technical —and potentially artistic— medium, often carries with it goals of
-            technical perfection that often tend to automatically dominate the process, a
-            high-fidelity approach that smooths out rough edges and dulls personal language, in
-            other words, the very condition for articulating a cinematic voice with intention. How
-            can the filmmaker render the technical aspect of their craft transparent, embrace
-            imperfection and simply manage to see and to hear?
-          </p>
-          <!-- Replace placeholder with your image path -->
-          <img
-            src="./assets/judges/efthimis-kosemund-sanidis-profile.png"
-            alt="Efthimis Kosemund-Sanidis Masterclass"
-            class="section-image"
-          />
-        </div>
+        <ol>
+          <li><strong>Children's Game</strong> by Philippe Chatard</li>
+          <li><strong>Quarter</strong> by Maja Górczak</li>
+          <li><strong>New Mexico</strong> by Antonis Goumas</li>
+          <li><strong>Samba Infinito</strong> by Leonardo Martinelli</li>
+          <li><strong>Dust to Dust</strong> by Dimitris Papathanasis</li>
+          <li><strong>Easter Day</strong> by Mykola Zasieiev</li>
+          <li><strong>Ya Hanouni</strong> by Lyna Tadount &amp; Sofian Chouaib</li>
+          <li><strong>The Professional Parent</strong> by Erik Jasaň</li>
+          <li><strong>Choice</strong> by Marko Crnogorski</li>
+          <li><strong>BOEING 237</strong> by Matthaios Anagnostopoolos &amp; Michail Karafyllis</li>
+          <li><strong>Nothing and Everything</strong> by Lia Tsalta</li>
+          <li><strong>Or How to Disappear</strong> by Giorgos Aggelopoolos</li>
+        </ol>
       </section>
 
-      <!-- SUBMISSION section removed -->
-
-      <!-- POTIDANIA section updated (text was identical but replaced for safety) -->
+      <!-- POTIDANIA section -->
       <section id="potidania">
         <h2>Potidania</h2>
         <p>
@@ -718,6 +594,14 @@
           experience them up close. <br /><br />You can find more information about Potidania on the
           village's <a href="https://potidaneia.gr/" target="_blank">website</a>.
         </p>
+
+        <div class="button-container">
+          <div class="submission-button disabled" title="Submissions are not currently open">
+            <img src="https://public-assets.filmfreeway.com/submission_buttons/v2/sm_submission_btn@2x-purple-gradient.png"
+              title="Submissions are not currently open" width="263" height="49" alt="FilmFreeway submissions currently closed">
+          </div>
+          <p class="submission-status">Submissions are not currently open. Please check back soon for updates.</p>
+        </div>
       </section>
 
       <!-- TEAM section updated and reordered -->
@@ -872,26 +756,13 @@
           </div>
         </div>
       </section>
-      <section id="sponsors">
-        <h2>Sponsors / Partners 2025</h2>
-        <div class="center-align">
 
-          <img src="assets/sponsors/logos 16x9 new.png" alt="Festival Sponsors PC View"
-            class="sponsor-logo desktop-image">
-
-          <img src="assets/sponsors/logos 16x9 new.png" alt="Festival Sponsors Tablet View"
-            class="sponsor-logo tablet-image">
-
-          <img src="assets/sponsors/logos 16x9 new.png" alt="Festival Sponsors Mobile View" class="sponsor-logo mobile-image">
-
-        </div>
-      </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 pt-shorts: Potidania Film Festival</p>
+      <p>&copy; 2026 pt-shorts: Potidania Film Festival</p>
       <p>
-        Contact: ptshorts.filmfestival@gmail.com
+        Contact: info@pt-shorts.gr
         <a href="https://www.instagram.com/ptshorts_filmfestival/" target="_blank"
           ><img src="assets/logos/Instagram_Glyph_White.svg" width="15" height="15" alt="Instagram"
         /></a>
@@ -902,6 +773,20 @@
             height="15"
             alt="Facebook"
         /></a>
+      </p>
+      <p style="margin-top: 10px;">
+        <a href="/2025/" style="color: white; font-weight: bold;">&larr; 2025 Edition</a>
+      </p>
+      <p style="margin-top: 8px; font-size: 0.85em;">
+        <a href="#about" style="color: #ccc;">Festival Overview</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/2025/#awards" style="color: #ccc;">pt-shorts Awards 2025</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/2025/#jury" style="color: #ccc;">Festival Jury 2025</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/2025/#masterclasses" style="color: #ccc;">Masterclasses 2025</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/2025/#sponsors" style="color: #ccc;">Sponsors / Partners 2025</a>
       </p>
     </footer>
 

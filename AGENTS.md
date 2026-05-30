@@ -23,7 +23,8 @@ Static GitHub Pages site. No build step, no package manager, no tests.
 
 ## Content
 
-- FilmFreeway submission button: `docs/index.html:455` — update URL yearly.
+- FilmFreeway submission button: `docs/index.html:503` — update URL yearly.
 - Instagram / Facebook links in footer at bottom.
+- The 2025 recap archive lives at `docs/2025/index.html` (separate page linked from footer).
 - Award pages live under `docs/assets/awards/`.
 - Judge bios reference profile images under `docs/assets/`.

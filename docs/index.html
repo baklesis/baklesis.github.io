@@ -177,28 +177,18 @@
       }
 
       @media screen and (max-width: 600px) {
-        .topnav.responsive {
-          position: relative;
+        .topnav {
+          min-height: 48px;
         }
 
-        .topnav a:not(:first-child) {
+        .topnav a {
           display: none;
         }
 
         .topnav a.icon {
-          float: center;
           display: block;
-        }
-      }
-
-      @media screen and (max-width: 600px) {
-        .topnav.responsive {
-          position: relative;
-        }
-
-        .topnav.responsive .icon {
           position: absolute;
-          right: 0;
+          right: 16px;
           top: 0;
         }
 
@@ -814,17 +804,31 @@
         nav.classList.toggle('responsive')
       }
 
+      // Close mobile menu when a nav link is clicked
+      document.querySelectorAll('.topnav a:not(.icon)').forEach((link) => {
+        link.addEventListener('click', () => {
+          document.getElementById('myTopnav').classList.remove('responsive')
+        })
+      })
+
+      // Close mobile menu when tapping outside
+      document.addEventListener('click', (e) => {
+        const nav = document.getElementById('myTopnav')
+        if (nav.classList.contains('responsive') && !nav.contains(e.target)) {
+          nav.classList.remove('responsive')
+        }
+      })
+
       // Highlighting sections on scroll
       window.addEventListener('scroll', () => {
         const sections = document.querySelectorAll('section')
-        const navLinks = document.querySelectorAll('.topnav a.nav-link') // Only select nav links
+        const navLinks = document.querySelectorAll('.topnav a.nav-link')
+        const navEl = document.getElementById('myTopnav')
+        const topOffset = Math.max(navEl.offsetHeight, 50) + 10
         let currentSectionId = ''
 
         sections.forEach((section) => {
           const rect = section.getBoundingClientRect()
-          // Adjust threshold to be smaller, e.g., 60 (height of nav) + 10
-          const topOffset = 70
-
           if (rect.top <= topOffset && rect.bottom >= topOffset) {
             currentSectionId = section.id
           }
@@ -832,10 +836,8 @@
 
         // Fallback for bottom of page
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
-          // Get last section
           if (sections.length > 0) {
             const lastSection = sections[sections.length - 1]
-            // Check if last section is in view
             const rect = lastSection.getBoundingClientRect()
             if (rect.top < window.innerHeight && rect.bottom >= 0) {
               currentSectionId = lastSection.id
